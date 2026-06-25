@@ -15,12 +15,12 @@ export function Rule({ style }: { style?: React.CSSProperties }) {
 /** Hero sub-label set between two fading brass rules. */
 export function OrnamentLabel({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", ...style }}>
-      <span style={{ height: "1px", width: "70px", background: "linear-gradient(90deg,transparent,var(--line-brass))" }} />
-      <span className="sc-label" style={{ letterSpacing: "0.32em", fontSize: "13px", color: "var(--brass-400)", whiteSpace: "nowrap" }}>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", gap: "16px", ...style }}>
+      <span className="ornament-rule" style={{ height: "1px", background: "linear-gradient(90deg,transparent,var(--line-brass))" }} />
+      <span className="sc-label ornament-label" style={{ color: "var(--brass-400)", textAlign: "center", maxWidth: "100%" }}>
         {children}
       </span>
-      <span style={{ height: "1px", width: "70px", background: "linear-gradient(90deg,var(--line-brass),transparent)" }} />
+      <span className="ornament-rule" style={{ height: "1px", background: "linear-gradient(90deg,var(--line-brass),transparent)" }} />
     </div>
   );
 }

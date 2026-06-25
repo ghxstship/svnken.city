@@ -29,7 +29,7 @@ function SeatingRow({ s, day }: { s: Seating; day: ShowDay }) {
         <span className="sc-h4" style={{ color: "var(--text-strong)", minWidth: "72px" }}>{s.time}</span>
         <Badge tone={statusTone(s.status)} dot>{STATUS_COPY[s.status]}</Badge>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+      <div className="seating-meta">
         {/* live availability meter */}
         <div style={{ textAlign: "right", minWidth: "84px" }}>
           <div className="sc-tag-text" style={{ color: soldOut ? "var(--rust-400)" : "var(--text-muted)" }}>
@@ -40,17 +40,13 @@ function SeatingRow({ s, day }: { s: Seating; day: ShowDay }) {
           </div>
         </div>
         <span className="sc-label" style={{ color: soldOut ? "var(--text-faint)" : "var(--brass-400)", fontSize: "12px", whiteSpace: "nowrap" }}>
-          {soldOut ? "Waitlist" : `Select seats · from $${fromPrice} →`}
+          {soldOut ? "Waitlist →" : `Select seats · from $${fromPrice} →`}
         </span>
       </div>
     </>
   );
 
   const rowStyle: React.CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: "14px",
     padding: "12px 14px",
     borderRadius: "var(--radius-sm)",
     border: "1px solid var(--line)",
@@ -59,15 +55,8 @@ function SeatingRow({ s, day }: { s: Seating; day: ShowDay }) {
     textDecoration: "none",
   };
 
-  if (soldOut) {
-    return (
-      <Link href="/#waitlist" style={rowStyle}>
-        {inner}
-      </Link>
-    );
-  }
   return (
-    <Link href={`/tickets/${seatingSlug(day.date, s.time24)}`} style={rowStyle}>
+    <Link className="seating-row" href={soldOut ? "/#waitlist" : `/tickets/${seatingSlug(day.date, s.time24)}`} style={rowStyle}>
       {inner}
     </Link>
   );
@@ -116,15 +105,7 @@ export function ShowSchedule() {
             </span>
           </div>
 
-          <div
-            style={{
-              padding: "16px",
-              display: "grid",
-              gridTemplateColumns: day.seatings.length >= 3 ? "1fr 1fr" : "1fr",
-              gap: "10px",
-            }}
-            className="seating-grid"
-          >
+          <div className={`seating-grid${day.seatings.length >= 3 ? " cols-2" : ""}`}>
             {day.seatings.map((s) => (
               <SeatingRow key={s.time24} s={s} day={day} />
             ))}

@@ -21,7 +21,7 @@ export function Nav() {
   return (
     <header>
       <div className="site-nav">
-        <Link href="/" className="sc-wordmark" style={{ fontSize: "19px", color: "var(--bone-100)", textDecoration: "none" }} onClick={() => setOpen(false)}>
+        <Link href="/" className="sc-wordmark" style={{ fontSize: "clamp(14px, 4.6vw, 19px)", color: "var(--bone-100)", textDecoration: "none" }} onClick={() => setOpen(false)}>
           SVNKENCITY
         </Link>
 

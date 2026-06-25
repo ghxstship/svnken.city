@@ -122,41 +122,46 @@ function LineGroup({
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
         {lines.map((l) => (
-          <Card key={l.id} style={{ display: "flex", gap: "16px", alignItems: "center", padding: "14px" }}>
+          <Card key={l.id} style={{ display: "flex", gap: "14px", alignItems: "flex-start", padding: "14px" }}>
             {l.kind === "merch" ? (
-              <div style={{ width: 72, flex: "none" }}>
-                <PhotoPlaceholder label={l.image || l.name} h={72} />
+              <div style={{ width: 64, flex: "none" }}>
+                <PhotoPlaceholder label={l.image || l.name} h={64} />
               </div>
             ) : (
               <KindMark kind={KIND_LABELS[l.kind]} />
             )}
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                {l.handle ? (
-                  <Link href={`/shop/${l.handle}`} className="sc-h4" style={{ color: "var(--text-strong)", textDecoration: "none" }}>
-                    {l.name}
-                  </Link>
+            <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div>
+                <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                  {l.handle ? (
+                    <Link href={`/shop/${l.handle}`} className="sc-h4" style={{ color: "var(--text-strong)", textDecoration: "none" }}>
+                      {l.name}
+                    </Link>
+                  ) : (
+                    <span className="sc-h4" style={{ color: "var(--text-strong)" }}>{l.name}</span>
+                  )}
+                  <Tag tone={l.channel === "shopify" ? "kraft" : "brass"}>{KIND_LABELS[l.kind]}</Tag>
+                </div>
+                {l.detail && <div className="sc-tag-text" style={{ color: "var(--text-faint)", marginTop: 4 }}>{l.detail}</div>}
+              </div>
+              {/* controls row — wraps below the name, fits any width */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", flexWrap: "wrap" }}>
+                {(l.maxQty ?? 99) <= 1 ? (
+                  <span className="sc-tag-text" style={{ color: "var(--text-faint)", whiteSpace: "nowrap" }}>1 seat</span>
                 ) : (
-                  <span className="sc-h4" style={{ color: "var(--text-strong)" }}>{l.name}</span>
+                  <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--line-strong)", borderRadius: "var(--radius-sm)", background: "var(--surface-sunk)" }}>
+                    <Step onClick={() => setQty(l.id, l.qty - 1)} label="Decrease">−</Step>
+                    <span className="sc-label" style={{ minWidth: 26, textAlign: "center", color: "var(--text-strong)" }}>{l.qty}</span>
+                    <Step onClick={() => setQty(l.id, l.qty + 1)} label="Increase">+</Step>
+                  </div>
                 )}
-                <Tag tone={l.channel === "shopify" ? "kraft" : "brass"}>{KIND_LABELS[l.kind]}</Tag>
+                <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                  <span className="sc-body" style={{ color: "var(--text-strong)", fontWeight: 600 }}>{formatPrice(l.price * l.qty)}</span>
+                  <button onClick={() => remove(l.id)} className="sc-tag-text" style={{ background: "none", border: "none", color: "var(--rust-400)", cursor: "pointer", padding: 0 }}>
+                    Remove
+                  </button>
+                </div>
               </div>
-              {l.detail && <div className="sc-tag-text" style={{ color: "var(--text-faint)", marginTop: 2 }}>{l.detail}</div>}
-            </div>
-            {(l.maxQty ?? 99) <= 1 ? (
-              <span className="sc-tag-text" style={{ color: "var(--text-faint)", whiteSpace: "nowrap" }}>1 seat</span>
-            ) : (
-              <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--line-strong)", borderRadius: "var(--radius-sm)", background: "var(--surface-sunk)" }}>
-                <Step onClick={() => setQty(l.id, l.qty - 1)} label="Decrease">−</Step>
-                <span className="sc-label" style={{ minWidth: 26, textAlign: "center", color: "var(--text-strong)" }}>{l.qty}</span>
-                <Step onClick={() => setQty(l.id, l.qty + 1)} label="Increase">+</Step>
-              </div>
-            )}
-            <div style={{ width: 70, textAlign: "right", flex: "none" }}>
-              <div className="sc-body" style={{ color: "var(--text-strong)", fontWeight: 600 }}>{formatPrice(l.price * l.qty)}</div>
-              <button onClick={() => remove(l.id)} className="sc-tag-text" style={{ background: "none", border: "none", color: "var(--rust-400)", cursor: "pointer", padding: 0 }}>
-                Remove
-              </button>
             </div>
           </Card>
         ))}

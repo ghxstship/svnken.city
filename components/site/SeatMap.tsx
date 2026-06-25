@@ -13,8 +13,8 @@ interface Props {
 }
 
 const seatBase: React.CSSProperties = {
-  width: 22,
-  height: 22,
+  width: "var(--seat-size)",
+  height: "var(--seat-size)",
   borderRadius: 3,
   padding: 0,
   fontSize: 0,
@@ -80,7 +80,7 @@ export function SeatMap({ inventory, display, time, buyUrl }: Props) {
   }
 
   return (
-    <div>
+    <div className="seat-map">
       {/* legend */}
       <div style={{ display: "flex", gap: "18px", flexWrap: "wrap", marginBottom: "20px" }}>
         <Legend swatch={{ background: "transparent", border: "1px solid var(--brass-500)" }} label="Available" />
@@ -125,8 +125,8 @@ export function SeatMap({ inventory, display, time, buyUrl }: Props) {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: `repeat(${sec.cols}, 22px)`,
-                  gap: 6,
+                  gridTemplateColumns: `repeat(${sec.cols}, var(--seat-size))`,
+                  gap: "var(--seat-gap)",
                   justifyContent: "center",
                   padding: "12px",
                   border: "1px solid var(--line)",
