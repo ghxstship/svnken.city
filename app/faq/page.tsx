@@ -19,7 +19,7 @@ export default function FaqPage() {
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>Questions, logged</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto" }}>
             Everything we get asked at the dock. If it isn&rsquo;t here, write{" "}
-            <a href={`mailto:${SITE.contact.reservations}`}>{SITE.contact.reservations}</a>.
+            <a href={`mailto:${SITE.contact.general}`}>{SITE.contact.general}</a>.
           </p>
         </div>
       </section>

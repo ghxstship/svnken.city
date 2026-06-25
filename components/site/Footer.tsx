@@ -57,8 +57,8 @@ export function Footer() {
               <br />
               {SITE.venue.address}
               <br />
-              <a href={`mailto:${SITE.contact.reservations}`} style={{ color: "var(--brass-400)" }}>
-                {SITE.contact.reservations}
+              <a href={`mailto:${SITE.contact.general}`} style={{ color: "var(--brass-400)" }}>
+                {SITE.contact.general}
               </a>
               <br />
               <a href={SITE.contact.instagramUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--brass-400)" }}>

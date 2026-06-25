@@ -22,7 +22,7 @@ export const SITE = {
   },
 
   contact: {
-    reservations: "manifest@svnken.city",
+    general: "bonvoyage@svnken.city",
     press: "press@svnken.city",
     groups: "tables@svnken.city",
     instagram: "@svnken.city",

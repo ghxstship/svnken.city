@@ -56,11 +56,11 @@ export const FAQ: FaqGroup[] = [
     items: [
       {
         q: "Can you handle allergies and dietary needs?",
-        a: "Yes — tell us when you reserve and again at the dock. We log a plant-based and a shellfish-free manifest for every seating. Severe allergies: write us at manifest@svnken.city before your night.",
+        a: "Yes — tell us when you reserve and again at the dock. We log a plant-based and a shellfish-free manifest for every seating. Severe allergies: write us at bonvoyage@svnken.city before your night.",
       },
       {
         q: "Is the venue accessible?",
-        a: "The infield room is step-free and ADA accessible. If you have specific access needs, write manifest@svnken.city and we will set your seat where the lanterns reach.",
+        a: "The infield room is step-free and ADA accessible. If you have specific access needs, write bonvoyage@svnken.city and we will set your seat where the lanterns reach.",
       },
       {
         q: "Is it 21+?",

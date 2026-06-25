@@ -29,8 +29,8 @@ export default function ContactPage() {
             <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "20px" }}>Reach us direct</h2>
             <div className="sc-body" style={{ color: "var(--text-muted)", lineHeight: 2 }}>
               <div>
-                <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "2px" }}>Reservations &amp; Guests</span>
-                <a href={`mailto:${SITE.contact.reservations}`}>{SITE.contact.reservations}</a>
+                <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "2px" }}>General &amp; Guest Services</span>
+                <a href={`mailto:${SITE.contact.general}`}>{SITE.contact.general}</a>
               </div>
               <Rule style={{ margin: "18px 0" }} />
               <div>

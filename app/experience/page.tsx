@@ -115,7 +115,7 @@ export default function ExperiencePage() {
               </p>
               <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>
                 The infield room is step-free and ADA accessible. Need something specific? Write{" "}
-                <a href={`mailto:${SITE.contact.reservations}`}>{SITE.contact.reservations}</a>.
+                <a href={`mailto:${SITE.contact.general}`}>{SITE.contact.general}</a>.
               </p>
             </div>
             <Card framed style={{ padding: "40px 36px", textAlign: "center", alignSelf: "center" }}>
