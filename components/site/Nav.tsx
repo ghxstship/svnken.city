@@ -6,11 +6,11 @@ import { ButtonLink } from "@/components/ui/Button";
 import { CartButton } from "@/components/shop/CartButton";
 
 const LINKS: [string, string][] = [
-  ["/experience", "The Voyage"],
-  ["/manifest", "The Manifest"],
+  ["/experience", "Experience"],
+  ["/manifest", "Menu"],
   ["/gallery", "Gallery"],
+  ["/venue", "Venue"],
   ["/shop", "Shop"],
-  ["/venue", "The Harbor"],
 ];
 
 export function Nav() {
