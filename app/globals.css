@@ -124,6 +124,15 @@ img { max-width: 100%; display: block; }
   .seating-meta { justify-content: space-between; }
 }
 
+/* Fare rows — full-width horizontal bands (cruise-style), stack on mobile */
+.fare-row { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.fare-main { flex: 1; min-width: 0; }
+.fare-price { display: flex; align-items: center; gap: 28px; flex: none; }
+@media (max-width: 640px) {
+  .fare-row { flex-direction: column; align-items: stretch; gap: 18px; }
+  .fare-price { width: 100%; justify-content: space-between; gap: 16px; }
+}
+
 /* Ornament label — wide tracking shrinks so long run labels don't clip */
 .ornament-label { letter-spacing: 0.3em; font-size: 13px; }
 .ornament-rule { width: 70px; }

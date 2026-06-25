@@ -49,25 +49,36 @@ export default function TicketsPage() {
         <div className="container">
           <Eyebrow style={{ marginBottom: "12px" }}>Fares</Eyebrow>
           <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "28px" }}>Four ways aboard</h2>
-          <div className="tier-grid">
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {TIERS.map((t) => {
               const featured = t.label === "The Manifest";
               return (
-                <Card key={t.label} framed={featured} interactive style={{ display: "flex", flexDirection: "column" }}>
-                  {featured && <Tag tone="brass" style={{ position: "absolute", top: "-14px", left: "20px" }}>Most aboard</Tag>}
-                  <div className="sc-eyebrow" style={{ marginBottom: "10px" }}>{t.label}</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "12px" }}>
-                    <span className="sc-display" style={{ color: "var(--text-strong)" }}>${t.price}</span>
-                    <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>/ seat</span>
+                <Card key={t.label} framed={featured} interactive style={{ padding: "clamp(20px, 3vw, 30px) clamp(22px, 3vw, 36px)" }}>
+                  <div className="fare-row">
+                    <div className="fare-main">
+                      <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap", marginBottom: "8px" }}>
+                        <span className="sc-eyebrow">{t.label}</span>
+                        {featured && <Tag tone="brass">Most aboard</Tag>}
+                      </div>
+                      <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>{t.note}</p>
+                    </div>
+                    <div className="fare-price">
+                      <div style={{ display: "flex", alignItems: "baseline", gap: "6px" }}>
+                        <span className="sc-display" style={{ color: "var(--text-strong)" }}>${t.price}</span>
+                        <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>/ seat</span>
+                      </div>
+                      <ButtonLink href="#schedule" variant={featured ? "primary" : "secondary"}>
+                        Choose dates →
+                      </ButtonLink>
+                    </div>
                   </div>
-                  <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }}>{t.note}</p>
                 </Card>
               );
             })}
           </div>
           <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
             Every fare is the full five-course descent with dinner included. Wine and rum pairings poured from the wreck cellar; a zero-proof
-            tide list logged for every seating.
+            tide list logged for every seating. Your fare is the section you pick on the seat map.
           </p>
         </div>
       </section>
@@ -86,7 +97,7 @@ export default function TicketsPage() {
       </section>
 
       {/* SCHEDULE */}
-      <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)" }}>
+      <section id="schedule" className="anchor" style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)" }}>
         <div className="container section">
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "16px", marginBottom: "28px", flexWrap: "wrap" }}>
             <div>
