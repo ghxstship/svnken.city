@@ -39,6 +39,7 @@ export function Footer() {
               ["/experience", "The Voyage"],
               ["/manifest", "The Manifest"],
               ["/gallery", "Gallery"],
+              ["/shop", "Shop"],
               ["/tickets", "Tickets"],
               ["/venue", "The Harbor"],
             ]}

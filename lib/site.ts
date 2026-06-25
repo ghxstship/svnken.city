@@ -52,6 +52,19 @@ export const SITE = {
     onSaleNote: "Tickets on sale now on Speakeasy.",
   },
 
+  // ----------------------------------------------------------
+  // MERCH — Shopify-hosted checkout (headless catalog + cart
+  // permalink). Set `domain` to the live *.myshopify.com domain and
+  // flip `live` to true once products exist and each variant in
+  // lib/merch.ts carries its real numeric Shopify variant id.
+  // ----------------------------------------------------------
+  shop: {
+    domain: "svnken-city.myshopify.com",
+    currency: "USD",
+    live: false,
+    note: "The salvage store. Checkout is handled securely on Shopify.",
+  },
+
   pricing: {
     softOpening: { label: "Soft Opening Seat", price: 95, note: "Preview night · two seatings only" },
     standard: { label: "The Manifest", price: 145, note: "Full seated voyage · per seat" },

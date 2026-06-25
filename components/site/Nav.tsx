@@ -3,13 +3,14 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ButtonLink } from "@/components/ui/Button";
+import { CartButton } from "@/components/shop/CartButton";
 
 const LINKS: [string, string][] = [
   ["/experience", "The Voyage"],
   ["/manifest", "The Manifest"],
   ["/gallery", "Gallery"],
+  ["/shop", "Shop"],
   ["/venue", "The Harbor"],
-  ["/faq", "Logbook"],
 ];
 
 export function Nav() {
@@ -24,7 +25,7 @@ export function Nav() {
           SVNKENCITY
         </Link>
 
-        <nav className="hide-mobile" style={{ display: "flex", gap: "30px", alignItems: "center" }}>
+        <nav className="hide-mobile" style={{ display: "flex", gap: "26px", alignItems: "center" }}>
           {LINKS.map(([href, label]) => (
             <Link key={href} href={href} className="nav-link" data-active={isActive(href)}>
               {label}
@@ -33,30 +34,32 @@ export function Nav() {
           <ButtonLink href="/tickets" size="sm">
             Tickets
           </ButtonLink>
+          <CartButton />
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
-          aria-expanded={open}
-          style={{
-            display: "none",
-            background: "none",
-            border: "1px solid var(--line-strong)",
-            borderRadius: "var(--radius-sm)",
-            color: "var(--brass-400)",
-            padding: "8px 12px",
-            cursor: "pointer",
-            fontFamily: "var(--font-label)",
-            fontSize: "12px",
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-          }}
-          className="mobile-toggle"
-        >
-          {open ? "Close" : "Menu"}
-        </button>
+        {/* Mobile cart + toggle */}
+        <div className="mobile-toggle" style={{ display: "none", alignItems: "center", gap: "10px" }}>
+          <CartButton />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+            aria-expanded={open}
+            style={{
+              background: "none",
+              border: "1px solid var(--line-strong)",
+              borderRadius: "var(--radius-sm)",
+              color: "var(--brass-400)",
+              padding: "8px 12px",
+              cursor: "pointer",
+              fontFamily: "var(--font-label)",
+              fontSize: "12px",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+            }}
+          >
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -74,7 +77,7 @@ export function Nav() {
 
       <style>{`
         @media (max-width: 880px) {
-          .mobile-toggle { display: inline-block !important; }
+          .mobile-toggle { display: flex !important; }
         }
       `}</style>
     </header>

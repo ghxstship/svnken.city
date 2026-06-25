@@ -3,6 +3,7 @@ import { Stalinist_One, Barlow_Semi_Condensed, EB_Garamond, Cinzel, Special_Elit
 import "./globals.css";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { CartProvider } from "@/components/shop/cart";
 import { SITE } from "@/lib/site";
 
 // Self-hosted via next/font (no fragile remote @import ordering, no FOUT).
@@ -52,11 +53,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={fontVars}>
       <body>
-        <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-          <Nav />
-          <main style={{ flex: 1 }}>{children}</main>
-          <Footer />
-        </div>
+        <CartProvider>
+          <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Nav />
+            <main style={{ flex: 1 }}>{children}</main>
+            <Footer />
+          </div>
+        </CartProvider>
       </body>
     </html>
   );
