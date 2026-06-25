@@ -28,13 +28,13 @@ export function CartView() {
     return (
       <div style={{ maxWidth: 540, margin: "0 auto", textAlign: "center", padding: "40px 0" }}>
         <Eyebrow style={{ marginBottom: "14px" }}>Your Hold</Eyebrow>
-        <h1 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Nothing on the manifest yet.</h1>
+        <h1 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>The dredge came up empty.</h1>
         <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "26px" }}>
-          The hold is empty. Add a seating, a table, or pull something up from the salvage store.
+          Nothing in the hold on this tide — yet. Claim a seat, reserve a table, or haul something up from the Shoppe.
         </p>
         <div className="row-center">
           <ButtonLink href="/tickets" size="lg">Register to Board</ButtonLink>
-          <ButtonLink href="/shop" size="lg" variant="secondary">The Store</ButtonLink>
+          <ButtonLink href="/shop" size="lg" variant="secondary">The Shoppe</ButtonLink>
         </div>
       </div>
     );

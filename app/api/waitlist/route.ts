@@ -17,7 +17,7 @@ export async function POST(req: Request) {
   const name = clean(data.name, 120);
 
   if (!isEmail(email)) {
-    return NextResponse.json({ error: "That email didn't read right. Try again." }, { status: 400 });
+    return NextResponse.json({ error: "That email didn't catch. Give it another haul." }, { status: 400 });
   }
 
   await appendRecord("waitlist.jsonl", {
@@ -29,6 +29,7 @@ export async function POST(req: Request) {
 
   return NextResponse.json({
     ok: true,
-    message: "You're on the manifest. We'll send drop alerts, openings, and the night's tide list — no spam.",
+    message:
+      "Logged at the rail. If a seat surfaces you'll hear from us before anyone above the waterline does — and the night's manifest lands at first light.",
   });
 }

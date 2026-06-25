@@ -34,7 +34,7 @@ export function NotifyForm({ compact = false }: { compact?: boolean }) {
   if (state === "done") {
     return (
       <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "flex-start" }}>
-        <Tag tone="patina">Logged · Lot No. 0488</Tag>
+        <Tag tone="patina">Logged at the rail · Lot No. 0488</Tag>
         <p className="sc-body" style={{ color: "var(--text)", margin: 0 }}>{msg}</p>
       </div>
     );
@@ -43,9 +43,9 @@ export function NotifyForm({ compact = false }: { compact?: boolean }) {
   return (
     <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px", width: "100%", maxWidth: compact ? "100%" : "440px" }}>
       {!compact && <Input label="Name" name="name" placeholder="Marlow" />}
-      <Input label="Email" name="email" type="email" placeholder="you@tide.mail" required hint="Drop alerts, manifest, and waitlist openings — no spam." />
+      <Input label="Email" name="email" type="email" placeholder="you@tide.mail" required hint="Drop alerts, the night's manifest, and openings before they surface above the waterline. No spam — diver's word." />
       <Button type="submit" size="lg" fullWidth disabled={state === "loading"}>
-        {state === "loading" ? "Logging…" : "Send to the Dock"}
+        {state === "loading" ? "Logging…" : "Log Me at the Rail"}
       </Button>
       {state === "error" && (
         <span className="sc-small" style={{ color: "var(--rust-400)", fontStyle: "italic" }}>{msg}</span>

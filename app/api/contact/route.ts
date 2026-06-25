@@ -23,10 +23,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "We'll need a name for the log." }, { status: 400 });
   }
   if (!isEmail(email)) {
-    return NextResponse.json({ error: "That email didn't read right. Try again." }, { status: 400 });
+    return NextResponse.json({ error: "That email didn't catch. Give it another haul." }, { status: 400 });
   }
   if (!message) {
-    return NextResponse.json({ error: "Leave us a note and we'll write back." }, { status: 400 });
+    return NextResponse.json({ error: "Leave us a line and we'll haul it in." }, { status: 400 });
   }
 
   await appendRecord("contact.jsonl", {
@@ -43,10 +43,10 @@ export async function POST(req: Request) {
   });
 
   const messages: Record<string, string> = {
-    group: "Logged. The dockmaster will write back with availability and a hold.",
-    partner: "Logged. Our partnerships crew will write back with the deck and next steps.",
-    career: "Logged. If the tide matches, the crew will write you for a call.",
-    general: "Logged. The crew will write you back at the email you left.",
+    group: "Logged at the dock. The dockmaster will write back with a hold and the lay of the night.",
+    partner: "Logged at the dock. Our crew will surface with the deck and next steps.",
+    career: "Logged at the dock. If the tide matches, we'll wave you down for a call.",
+    general: "Logged at the dock. We'll haul a reply back to the email you left.",
   };
 
   return NextResponse.json({ ok: true, message: messages[topic] || messages.general });

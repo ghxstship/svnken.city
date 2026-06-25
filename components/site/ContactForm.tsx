@@ -35,8 +35,8 @@ export function ContactForm({ topic = "general" }: { topic?: Topic }) {
   if (state === "done") {
     return (
       <Card framed style={{ padding: "44px 40px", textAlign: "center" }}>
-        <Tag tone="patina" style={{ marginBottom: "16px" }}>Logged · Lot No. 0488</Tag>
-        <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Your message reached the dock.</h2>
+        <Tag tone="patina" style={{ marginBottom: "16px" }}>Logged at the dock · Lot No. 0488</Tag>
+        <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Hauled in, loud and clear.</h2>
         <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>{msg}</p>
       </Card>
     );

@@ -107,17 +107,17 @@ export default function HomePage() {
       {/* ---------- HOW IT WORKS ---------- */}
       <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
         <div className="container section">
-          <SectionHead eyebrow="The Crossing" title="Three tides, one seating" center style={{ marginBottom: "40px" }} />
+          <SectionHead eyebrow="All Aboard" title="We take you down — and bring you back" center style={{ marginBottom: "40px" }} />
           <div className="cards-3">
             {[
-              ["I", "Board at the dock", "Arrive 15 minutes early. The crew finds your name on the manifest and the room seals as the descent begins."],
-              ["II", "Descend, course by course", "Five courses drop you a depth zone deeper while the crew works the room. Roughly ninety minutes, surface to city."],
-              ["III", "Surface", "The city ignites, then the room lifts back to warm light — and on festival nights, the afterparty carries the rest."],
+              ["01", "Step aboard", "Come a quarter-hour early and give us your name — we&rsquo;ll find you on the manifest. Mind the rail: once the doors close, the room seals and we cast off for the deep."],
+              ["02", "Down you go", "Five courses, each a fathom deeper than the last, while the crew works the room and the city stirs below. Ninety minutes, surface to seabed — the legend goes you won&rsquo;t clock the time."],
+              ["03", "Back to dry deck", "The drowned city wakes, the lanterns lift, and we set you topside a little salt-cured. On festival nights, the afterparty carries you the rest of the way."],
             ].map(([num, title, body]) => (
               <Card key={num as string} interactive>
-                <div className="sc-wordmark" style={{ color: "var(--brass-500)", fontSize: "28px", marginBottom: "14px" }}>{num}</div>
-                <h3 className="sc-h3" style={{ color: "var(--text-strong)", marginBottom: "10px" }}>{title}</h3>
-                <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }}>{body}</p>
+                <div className="sc-h2" style={{ color: "var(--brass-500)", marginBottom: "12px" }}>{num}</div>
+                <h3 className="sc-h3" style={{ color: "var(--text-strong)", marginBottom: "10px" }} dangerouslySetInnerHTML={{ __html: title }} />
+                <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }} dangerouslySetInnerHTML={{ __html: body }} />
               </Card>
             ))}
           </div>
@@ -157,8 +157,8 @@ export default function HomePage() {
               Claim a seat below the waterline.
             </h2>
             <p className="sc-lead" style={{ color: "var(--text-muted)", maxWidth: "560px", margin: "0 auto 28px" }}>
-              Seats run from ${SITE.pricing.softOpening.price}. Dinner is included in every fare. When a seating fills, it&rsquo;s gone —
-              the tide does not wait.
+              Seats run from ${SITE.pricing.softOpening.price}, dinner and the whole descent included. The book fills from the bottom up, and
+              when a tide&rsquo;s gone it&rsquo;s gone — the depths don&rsquo;t hold a table. Best-kept secret below sea level, while it lasts.
             </p>
             <div className="row-center">
               <ButtonLink href="/tickets" size="lg">
@@ -181,8 +181,8 @@ export default function HomePage() {
               If the tide turns, we&rsquo;ll write you first.
             </h2>
             <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>
-              Sold-out seatings free up. Leave your name at the dock and we&rsquo;ll send openings, the night&rsquo;s manifest, and word when the
-              next run goes on sale.
+              The book&rsquo;s full when it&rsquo;s full — but the tide turns. Leave your name at the rail and, if a seat surfaces, you&rsquo;ll
+              hear from us before anyone above the waterline does.
             </p>
           </div>
           <div style={{ display: "flex", justifyContent: "flex-start" }}>

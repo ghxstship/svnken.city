@@ -10,10 +10,10 @@ export default function NotFound() {
         <h1 className="sc-wordmark" style={{ color: "var(--bone-100)", fontSize: "clamp(3rem, 12vw, 6rem)", margin: 0 }}>404</h1>
         <OrnamentLabel style={{ margin: "20px 0 24px" }}>This page went under</OrnamentLabel>
         <p className="sc-lead" style={{ color: "var(--text-muted)", marginBottom: "30px" }}>
-          Whatever you were after slipped off the manifest. Let&rsquo;s get you back to the dock.
+          Whatever you were after slipped below the waterline — the divers will fetch it eventually. For now, back to dry deck.
         </p>
         <div className="row-center">
-          <ButtonLink href="/" size="lg">Back to the House</ButtonLink>
+          <ButtonLink href="/" size="lg">Back to Dry Deck</ButtonLink>
           <ButtonLink href="/tickets" size="lg" variant="secondary">Register to Board</ButtonLink>
         </div>
       </div>
