@@ -25,10 +25,15 @@ export default function HomePage() {
             <Wordmark fill="var(--bone-100)" />
           </h1>
           <OrnamentLabel style={{ margin: "26px 0 30px" }}>{SITE.tagline}</OrnamentLabel>
-          <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "640px", margin: "0 auto 18px" }}>
-            A city that drowned a thousand tides ago is waking — and for six nights, it opens its gates. Descend on a five-course voyage where
-            divers surface the day&rsquo;s catch, performers become the creatures of the deep, and a lost, luminous empire rises to meet your
-            table. There is no menu — only the manifest of what we brought up today.
+          <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "640px", margin: "0 auto 16px" }}>
+            At the turn of the tide, a sunken city rises from the dark — its drowned cathedral still tolling through the water — and for six
+            nights, it opens its gates. Descend on a five-course voyage where divers surface the day&rsquo;s catch, performers become the
+            creatures of the deep, and a lost, luminous empire wakes to meet your table. There is no menu — only the manifest of what we
+            brought up today.
+          </p>
+          <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto 20px" }}>
+            Claude Debussy&rsquo;s <em style={{ color: "var(--text)" }}>The Sunken Cathedral</em>, reimagined as an immersive electro rock opera —
+            fine dining at a Michelin pitch, Cirque-grade spectacle, and the pulse of EDC, five fathoms down.
           </p>
           <div className="sc-tag-text" style={{ color: "var(--brass-400)", marginBottom: "34px" }}>{RUN_LABEL}</div>
           <div className="row-center">
