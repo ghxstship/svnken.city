@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Button, ButtonLink } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, Rule, PhotoPlaceholder } from "@/components/ui/Atoms";
@@ -20,8 +20,8 @@ export function CartView() {
     setQty,
     remove,
     clear,
-    shopifyCheckoutUrl,
-    speakeasyCheckoutUrl,
+    checkoutUrl,
+    checkoutPlatform,
   } = useCart();
 
   if (count === 0) {
@@ -40,8 +40,6 @@ export function CartView() {
     );
   }
 
-  const bothChannels = experienceLines.length > 0 && merchLines.length > 0;
-
   return (
     <div className="cart-grid">
       {/* Lines, grouped by fulfillment */}
@@ -56,7 +54,7 @@ export function CartView() {
         {experienceLines.length > 0 && (
           <LineGroup
             title="The Voyage"
-            sub={`Seatings, tables & add-ons · checkout on ${SITE.ticketing.platform}`}
+            sub="Seatings, tables & add-ons"
             lines={experienceLines}
             setQty={setQty}
             remove={remove}
@@ -65,7 +63,7 @@ export function CartView() {
         {merchLines.length > 0 && (
           <LineGroup
             title="The Salvage Store"
-            sub="Merch · ships after the run, checkout on Shopify"
+            sub="Merch · ships after the run"
             lines={merchLines}
             setQty={setQty}
             remove={remove}
@@ -82,38 +80,21 @@ export function CartView() {
         <Rule style={{ margin: "16px 0" }} />
         <Row label="Subtotal" value={formatPrice(subtotal)} strong />
 
-        <div style={{ marginTop: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
-          {bothChannels && (
-            <p className="sc-small sc-italic" style={{ color: "var(--text-muted)", margin: 0 }}>
-              Your hold has experience tickets and store merch, fulfilled by different partners. Finish in two quick, secure steps:
-            </p>
-          )}
-
-          {speakeasyCheckoutUrl && (
-            <ButtonLink href={speakeasyCheckoutUrl} external size="lg" fullWidth>
-              {bothChannels ? "1 · Checkout Tickets" : "Checkout on Speakeasy"} →
+        <div style={{ marginTop: "22px" }}>
+          {checkoutUrl && (
+            <ButtonLink href={checkoutUrl} external size="lg" fullWidth>
+              Checkout on {checkoutPlatform} →
             </ButtonLink>
           )}
-
-          {merchLines.length > 0 &&
-            (shopifyCheckoutUrl ? (
-              <ButtonLink href={shopifyCheckoutUrl} external size="lg" fullWidth variant={bothChannels ? "secondary" : "primary"}>
-                {bothChannels ? "2 · Checkout Merch" : "Checkout on Shopify"} →
-              </ButtonLink>
-            ) : (
-              <div>
-                <Button size="lg" fullWidth variant={bothChannels ? "secondary" : "primary"} disabled>
-                  {bothChannels ? "2 · Merch Opens Soon" : "Store Opens Soon"}
-                </Button>
-                <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "10px", textAlign: "center" }}>
-                  The store goes live with the run; merch checkout hands off to Shopify once it opens.
-                </p>
-              </div>
-            ))}
+          {merchLines.length > 0 && experienceLines.length > 0 && (
+            <p className="sc-small sc-italic" style={{ color: "var(--text-muted)", marginTop: "12px", textAlign: "center" }}>
+              Seatings and merch check out together — one secure basket.
+            </p>
+          )}
         </div>
 
         <p className="sc-tag-text" style={{ color: "var(--text-faint)", marginTop: "16px", textAlign: "center" }}>
-          Secure checkout · {SITE.shop.currency}
+          Secure checkout on {checkoutPlatform} · {SITE.shop.currency}
         </p>
       </Card>
     </div>

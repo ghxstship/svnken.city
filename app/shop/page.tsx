@@ -21,9 +21,7 @@ export default function ShopPage() {
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto 18px" }}>
             Apparel, headwear, prints, and goods pulled from the SVNKEN CITY build. Limited to the run.
           </p>
-          {!SITE.shop.live && (
-            <Badge tone="brass" dot>Store opens with the run · checkout on {"Shopify"}</Badge>
-          )}
+          <Badge tone="brass" dot>Checkout on {SITE.ticketing.platform} · ships after the run</Badge>
         </div>
       </section>
 

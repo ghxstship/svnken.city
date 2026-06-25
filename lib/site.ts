@@ -62,7 +62,10 @@ export const SITE = {
     domain: "svnken-city.myshopify.com",
     currency: "USD",
     live: false,
-    note: "The salvage store. Checkout is handled securely on Shopify.",
+    // Checkout is consolidated to Speakeasy for now — tickets, tables,
+    // add-ons, and merch all settle in one basket. Flip the cart back to
+    // a Shopify channel later by restoring channel:"shopify" on merch lines.
+    note: "Checkout is handled securely on Speakeasy.",
   },
 
   pricing: {

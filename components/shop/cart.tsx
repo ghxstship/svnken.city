@@ -49,10 +49,9 @@ interface CartCtx {
   setQty: (id: string, qty: number) => void;
   remove: (id: string) => void;
   clear: () => void;
-  /** Shopify cart permalink for merch lines (null until store is live / empty) */
-  shopifyCheckoutUrl: string | null;
-  /** Speakeasy handoff for experience lines (null when none) */
-  speakeasyCheckoutUrl: string | null;
+  /** Single consolidated checkout handoff — everything settles on Speakeasy for now. */
+  checkoutUrl: string | null;
+  checkoutPlatform: string;
 }
 
 const Ctx = React.createContext<CartCtx | null>(null);
@@ -102,25 +101,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const count = lines.reduce((n, l) => n + l.qty, 0);
   const subtotal = lines.reduce((n, l) => n + l.qty * l.price, 0);
 
-  const experienceLines = lines.filter((l) => l.channel === "speakeasy");
-  const merchLines = lines.filter((l) => l.channel === "shopify");
+  // Display groups (by kind): tickets/tables/add-ons vs. merch.
+  const experienceLines = lines.filter((l) => l.kind !== "merch");
+  const merchLines = lines.filter((l) => l.kind === "merch");
   const experienceSubtotal = experienceLines.reduce((n, l) => n + l.qty * l.price, 0);
   const merchSubtotal = merchLines.reduce((n, l) => n + l.qty * l.price, 0);
 
-  // Merch → Shopify cart permalink: /cart/{variantId}:{qty},...
-  const shopifyCheckoutUrl =
-    SITE.shop.live && merchLines.length
-      ? `https://${SITE.shop.domain}/cart/${merchLines.map((l) => `${l.shopifyVariantId}:${l.qty}`).join(",")}`
-      : null;
-
-  // Experience → Speakeasy. A single seating deep-links to its event; a
-  // mixed experience hold hands off to the Speakeasy box office, which
-  // itemizes the hold there. (Tickets are on sale, so this is always live.)
-  const speakeasyCheckoutUrl =
-    experienceLines.length === 0
+  // Consolidated checkout — everything (tickets, tables, add-ons, merch)
+  // settles on Speakeasy for now. A single line deep-links to its event;
+  // any larger hold hands off to the Speakeasy box office, which itemizes
+  // the whole basket there.
+  const checkoutUrl =
+    lines.length === 0
       ? null
-      : experienceLines.length === 1 && experienceLines[0].buyUrl
-        ? experienceLines[0].buyUrl
+      : lines.length === 1 && lines[0].buyUrl
+        ? lines[0].buyUrl
         : SITE.ticketing.speakeasyBase;
 
   return (
@@ -138,8 +133,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         setQty,
         remove,
         clear,
-        shopifyCheckoutUrl,
-        speakeasyCheckoutUrl,
+        checkoutUrl,
+        checkoutPlatform: SITE.ticketing.platform,
       }}
     >
       {children}

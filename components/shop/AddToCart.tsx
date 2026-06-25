@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/Button";
 import { useCart } from "@/components/shop/cart";
 import type { Product } from "@/lib/merch";
+import { SITE } from "@/lib/site";
 
 export function AddToCart({ product }: { product: Product }) {
   const { add } = useCart();
@@ -25,10 +26,12 @@ export function AddToCart({ product }: { product: Product }) {
       {
         id: `merch:${variant.shopifyVariantId}`,
         kind: "merch",
-        channel: "shopify",
+        // Consolidated to Speakeasy for now — merch settles in the same basket.
+        channel: "speakeasy",
         name: product.name,
         detail: variant.title !== "One size" ? `${variant.title} · ${product.lot}` : product.lot,
         price: product.price,
+        buyUrl: `${SITE.ticketing.speakeasyBase}/store/${product.handle}`,
         shopifyVariantId: variant.shopifyVariantId,
         handle: product.handle,
         image: product.name,
