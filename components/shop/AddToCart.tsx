@@ -23,11 +23,15 @@ export function AddToCart({ product }: { product: Product }) {
     if (!variant || needsSize || unavailable) return;
     add(
       {
-        variantId: variant.shopifyVariantId,
-        handle: product.handle,
+        id: `merch:${variant.shopifyVariantId}`,
+        kind: "merch",
+        channel: "shopify",
         name: product.name,
-        variantTitle: variant.title,
+        detail: variant.title !== "One size" ? `${variant.title} · ${product.lot}` : product.lot,
         price: product.price,
+        shopifyVariantId: variant.shopifyVariantId,
+        handle: product.handle,
+        image: product.name,
         lot: product.lot,
       },
       qty,

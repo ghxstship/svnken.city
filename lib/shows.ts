@@ -124,3 +124,10 @@ export const STATUS_COPY: Record<SeatingStatus, string> = {
 export function totalSeatings(): number {
   return SHOWS.reduce((n, d) => n + d.seatings.length, 0);
 }
+
+// Per-seat fare by day kind (soft-opening preview seats are reduced).
+export const FARES = { softOpening: 95, standard: 145 } as const;
+
+export function fareFor(kind: ShowDay["kind"]): number {
+  return kind === "soft-opening" ? FARES.softOpening : FARES.standard;
+}

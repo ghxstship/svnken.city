@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, OrnamentLabel } from "@/components/ui/Atoms";
 import { ShowSchedule } from "@/components/site/ShowSchedule";
+import { AddExtras } from "@/components/site/AddExtras";
 import { SITE } from "@/lib/site";
 import { RUN_LABEL, totalSeatings } from "@/lib/shows";
 
@@ -78,7 +79,26 @@ export default function TicketsPage() {
           </div>
           <ShowSchedule />
           <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
-            Status shown is approximate and updates as seats move on {SITE.ticketing.platform}. Sold-out seatings open a waitlist.
+            Add seatings to your hold, layer on tables and upgrades below, then check out — everything in one cart. Status updates as seats
+            move on {SITE.ticketing.platform}; sold-out seatings open a waitlist.
+          </p>
+        </div>
+      </section>
+
+      {/* TABLES & ADD-ONS */}
+      <section className="section">
+        <div className="container">
+          <div style={{ marginBottom: "28px" }}>
+            <Eyebrow style={{ marginBottom: "12px" }}>Enhance the Night</Eyebrow>
+            <h2 className="sc-h1" style={{ color: "var(--text-strong)", margin: 0 }}>Tables, sections &amp; upgrades</h2>
+            <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "620px", marginTop: "12px", marginBottom: 0 }}>
+              Reserve a table, add a pairing, or skip the dock. Everything drops into the same hold as your seatings and checks out together.
+            </p>
+          </div>
+          <AddExtras />
+          <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
+            Larger parties and full buyouts go through{" "}
+            <a href="/group-bookings">group tables</a>.
           </p>
         </div>
       </section>

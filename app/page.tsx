@@ -166,7 +166,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- WAITLIST ---------- */}
-      <section className="section">
+      <section className="section anchor" id="waitlist">
         <div className="container split">
           <div>
             <Eyebrow style={{ marginBottom: "16px" }}>The Waitlist</Eyebrow>

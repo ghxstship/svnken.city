@@ -1,7 +1,8 @@
 import React from "react";
-import { SHOWS, STATUS_COPY, type ShowDay, type Seating } from "@/lib/shows";
+import { SHOWS, STATUS_COPY, fareFor, type ShowDay, type Seating } from "@/lib/shows";
 import { Badge } from "@/components/ui/Badge";
 import { Tag } from "@/components/ui/Tag";
+import { AddSeatingButton } from "@/components/site/AddSeatingButton";
 
 function kindTone(kind: ShowDay["kind"]) {
   if (kind === "soft-opening") return "patina" as const;
@@ -15,43 +16,39 @@ function statusTone(s: Seating["status"]) {
   return "available" as const;
 }
 
-function SeatingRow({ s }: { s: Seating }) {
+function SeatingRow({ s, day }: { s: Seating; day: ShowDay }) {
   const soldOut = s.status === "sold-out";
+  const fare = fareFor(day.kind);
   return (
-    <a
-      href={soldOut ? undefined : s.buyUrl}
-      target={soldOut ? undefined : "_blank"}
-      rel="noopener noreferrer"
+    <div
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         gap: "14px",
-        padding: "14px 16px",
+        padding: "12px 14px",
         borderRadius: "var(--radius-sm)",
         border: "1px solid var(--line)",
         background: soldOut ? "transparent" : "var(--surface-sunk)",
-        textDecoration: "none",
-        opacity: soldOut ? 0.5 : 1,
-        cursor: soldOut ? "not-allowed" : "pointer",
-        transition: "border-color var(--dur-fast) var(--ease-tide)",
+        opacity: soldOut ? 0.55 : 1,
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <span className="sc-h4" style={{ color: "var(--text-strong)", minWidth: "76px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "12px", minWidth: 0 }}>
+        <span className="sc-h4" style={{ color: "var(--text-strong)", minWidth: "72px" }}>
           {s.time}
         </span>
         <Badge tone={statusTone(s.status)} dot>
           {STATUS_COPY[s.status]}
         </Badge>
       </div>
-      <span
-        className="sc-label"
-        style={{ color: soldOut ? "var(--text-faint)" : "var(--brass-400)", fontSize: "12px", whiteSpace: "nowrap" }}
-      >
-        {soldOut ? "Waitlist" : "Reserve →"}
-      </span>
-    </a>
+      <AddSeatingButton
+        id={`ticket:${day.date}:${s.time24}`}
+        name={`${day.display} · ${s.time}`}
+        price={fare}
+        buyUrl={s.buyUrl}
+        soldOut={soldOut}
+      />
+    </div>
   );
 }
 
@@ -108,7 +105,7 @@ export function ShowSchedule() {
             className="seating-grid"
           >
             {day.seatings.map((s) => (
-              <SeatingRow key={s.time24} s={s} />
+              <SeatingRow key={s.time24} s={s} day={day} />
             ))}
           </div>
         </div>
