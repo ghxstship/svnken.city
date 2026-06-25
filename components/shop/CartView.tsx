@@ -33,7 +33,7 @@ export function CartView() {
           The hold is empty. Add a seating, a table, or pull something up from the salvage store.
         </p>
         <div className="row-center">
-          <ButtonLink href="/tickets" size="lg">Get Tickets</ButtonLink>
+          <ButtonLink href="/tickets" size="lg">Register to Board</ButtonLink>
           <ButtonLink href="/shop" size="lg" variant="secondary">The Store</ButtonLink>
         </div>
       </div>

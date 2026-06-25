@@ -128,7 +128,7 @@ export default function GalleryPage() {
               <ButtonLink href={`mailto:${SITE.contact.press}`} external variant="secondary">
                 {SITE.contact.press}
               </ButtonLink>
-              <ButtonLink href="/tickets">Get Tickets</ButtonLink>
+              <ButtonLink href="/tickets">Register to Board</ButtonLink>
             </div>
           </Card>
         </div>

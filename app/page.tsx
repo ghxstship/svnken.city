@@ -25,16 +25,17 @@ export default function HomePage() {
             <Wordmark fill="var(--bone-100)" />
           </h1>
           <OrnamentLabel style={{ margin: "26px 0 30px" }}>{SITE.tagline}</OrnamentLabel>
-          <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "600px", margin: "0 auto 18px" }}>
-            {SITE.oneLiner} A theatrical five-course descent below the waterline — the official SVNKEN CITY × EDC Orlando home, six nights only.
+          <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "620px", margin: "0 auto 18px" }}>
+            There is no menu — only the manifest of what the divers brought up today. Come below the waterline for a theatrical five-course
+            descent, where the deep performs and a drowned city wakes. The official SVNKEN CITY × EDC Orlando home, six nights only.
           </p>
           <div className="sc-tag-text" style={{ color: "var(--brass-400)", marginBottom: "34px" }}>{RUN_LABEL}</div>
           <div className="row-center">
             <ButtonLink href="/tickets" size="lg">
-              Get Tickets
+              Register to Board
             </ButtonLink>
             <ButtonLink href="/experience" size="lg" variant="secondary">
-              The Voyage
+              Dive Deeper
             </ButtonLink>
           </div>
           <div className="row-center" style={{ marginTop: "30px", gap: "10px" }}>

@@ -167,7 +167,7 @@ export default function ExperiencePage() {
               </p>
               <Rule style={{ marginBottom: "24px" }} />
               <ButtonLink href="/tickets" size="lg" fullWidth>
-                Get Tickets
+                Register to Board
               </ButtonLink>
             </Card>
           </div>

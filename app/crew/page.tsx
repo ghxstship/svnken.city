@@ -59,7 +59,7 @@ export default function CrewPage() {
             </p>
             <div className="row-center">
               <ButtonLink href="/careers" variant="secondary">See Open Roles</ButtonLink>
-              <ButtonLink href="/tickets">Get Tickets</ButtonLink>
+              <ButtonLink href="/tickets">Register to Board</ButtonLink>
             </div>
           </Card>
         </div>

@@ -60,7 +60,7 @@ export default function FaqPage() {
           ))}
 
           <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <ButtonLink href="/tickets" size="lg">Get Tickets</ButtonLink>
+            <ButtonLink href="/tickets" size="lg">Register to Board</ButtonLink>
           </div>
         </div>
       </section>

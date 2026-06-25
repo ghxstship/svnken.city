@@ -47,7 +47,7 @@ export default function VenuePage() {
               <ButtonLink href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} external variant="secondary">
                 Open in Maps →
               </ButtonLink>
-              <ButtonLink href="/tickets">Get Tickets</ButtonLink>
+              <ButtonLink href="/tickets">Register to Board</ButtonLink>
             </div>
           </div>
         </div>

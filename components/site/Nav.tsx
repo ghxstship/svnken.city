@@ -10,7 +10,8 @@ const LINKS: [string, string][] = [
   ["/manifest", "Menu"],
   ["/gallery", "Gallery"],
   ["/venue", "Venue"],
-  ["/shop", "Shop"],
+  ["/shop", "Shoppe"],
+  ["/community", "Community"],
 ];
 
 export function Nav() {
@@ -25,7 +26,7 @@ export function Nav() {
           SVNKENCITY
         </Link>
 
-        <nav className="hide-mobile" style={{ display: "flex", gap: "26px", alignItems: "center" }}>
+        <nav className="hide-mobile" style={{ display: "flex", gap: "20px", alignItems: "center" }}>
           {LINKS.map(([href, label]) => (
             <Link key={href} href={href} className="nav-link" data-active={isActive(href)}>
               {label}

@@ -40,7 +40,8 @@ export function Footer() {
               ["/manifest", "The Manifest"],
               ["/crew", "The Crew"],
               ["/gallery", "Gallery"],
-              ["/shop", "Shop"],
+              ["/shop", "Shoppe"],
+              ["/community", "Community"],
               ["/tickets", "Tickets"],
               ["/venue", "The Harbor"],
             ]}

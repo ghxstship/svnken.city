@@ -14,7 +14,7 @@ export default function NotFound() {
         </p>
         <div className="row-center">
           <ButtonLink href="/" size="lg">Back to the House</ButtonLink>
-          <ButtonLink href="/tickets" size="lg" variant="secondary">Get Tickets</ButtonLink>
+          <ButtonLink href="/tickets" size="lg" variant="secondary">Register to Board</ButtonLink>
         </div>
       </div>
     </section>
