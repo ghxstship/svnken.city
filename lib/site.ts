@@ -25,9 +25,21 @@ export const SITE = {
     general: "bonvoyage@svnken.city",
     press: "press@svnken.city",
     groups: "tables@svnken.city",
+    partners: "partners@svnken.city",
+    careers: "crew@svnken.city",
     instagram: "@svnken.city",
     instagramUrl: "https://instagram.com/svnken.city",
   },
+
+  // Social — handle is @svnken.city wherever the platform allows a "."
+  // in the username; where it doesn't (X), it falls back to @svnkencity.
+  social: [
+    { platform: "Instagram", handle: "@svnken.city", url: "https://instagram.com/svnken.city" },
+    { platform: "TikTok", handle: "@svnken.city", url: "https://www.tiktok.com/@svnken.city" },
+    { platform: "X", handle: "@svnkencity", url: "https://x.com/svnkencity" },
+    { platform: "YouTube", handle: "@svnken.city", url: "https://www.youtube.com/@svnken.city" },
+    { platform: "Facebook", handle: "@svnken.city", url: "https://www.facebook.com/svnken.city" },
+  ],
 
   // ----------------------------------------------------------
   // TICKETING — sold on Speakeasy (NOT Ticket Fairy).

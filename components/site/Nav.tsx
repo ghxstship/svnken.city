@@ -7,6 +7,7 @@ import { ButtonLink } from "@/components/ui/Button";
 const LINKS: [string, string][] = [
   ["/experience", "The Voyage"],
   ["/manifest", "The Manifest"],
+  ["/gallery", "Gallery"],
   ["/venue", "The Harbor"],
   ["/faq", "Logbook"],
 ];

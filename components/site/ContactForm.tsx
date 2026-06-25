@@ -5,7 +5,9 @@ import { Input, Textarea, Select } from "@/components/ui/Field";
 import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 
-export function ContactForm({ topic = "general" }: { topic?: "general" | "group" }) {
+type Topic = "general" | "group" | "partner" | "career";
+
+export function ContactForm({ topic = "general" }: { topic?: Topic }) {
   const [state, setState] = React.useState<"idle" | "loading" | "done" | "error">("idle");
   const [msg, setMsg] = React.useState("");
 
@@ -45,7 +47,7 @@ export function ContactForm({ topic = "general" }: { topic?: "general" | "group"
       <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
         <Input label="Name" name="name" placeholder="Marlow" required />
         <Input label="Email" name="email" type="email" placeholder="you@tide.mail" required />
-        {topic === "group" ? (
+        {topic === "group" && (
           <>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
               <Select label="Party Size" name="party" defaultValue="8 – 12">
@@ -58,7 +60,29 @@ export function ContactForm({ topic = "general" }: { topic?: "general" | "group"
             </div>
             <Textarea label="Tell us about the table" name="message" placeholder="The occasion, must-have seating, anything the kitchen should know…" rows={4} required />
           </>
-        ) : (
+        )}
+        {topic === "partner" && (
+          <>
+            <Input label="Company / Brand" name="org" placeholder="The brand you represent" required />
+            <Select label="Interest" name="role" defaultValue="Dock Partner (Presenting)">
+              <option>Dock Partner (Presenting)</option>
+              <option>Cellar Partner (Beverage)</option>
+              <option>Manifest Partner (Activation)</option>
+              <option>Not sure yet — let's talk</option>
+            </Select>
+            <Textarea label="What do you have in mind?" name="message" placeholder="Goals, category, budget range, must-haves…" rows={4} required />
+          </>
+        )}
+        {topic === "career" && (
+          <>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <Input label="Department" name="org" placeholder="Culinary, Entertainment…" />
+              <Input label="Role you're after" name="role" placeholder="Line Cook, Dancer…" />
+            </div>
+            <Textarea label="Tell us about you" name="message" placeholder="Experience, availability for Nov 4–9, and a link to a reel / résumé / portfolio…" rows={4} required />
+          </>
+        )}
+        {topic === "general" && (
           <Textarea label="Message" name="message" placeholder="What can the dock help with?" rows={5} required />
         )}
         <Button type="submit" size="lg" fullWidth disabled={state === "loading"}>

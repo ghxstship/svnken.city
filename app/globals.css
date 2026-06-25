@@ -109,6 +109,30 @@ img { max-width: 100%; display: block; }
 /* Anchored sections offset for sticky nav */
 .anchor { scroll-margin-top: 90px; }
 
+/* ---- Page-specific grids (kept here to avoid inline <style> hydration issues) ---- */
+.tier-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.dept-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.partner-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; grid-auto-flow: dense; }
+
+@media (max-width: 880px) {
+  .tier-grid { grid-template-columns: 1fr 1fr; }
+  .dept-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .partner-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid > div { grid-column: span 1 !important; }
+}
+
+/* FAQ accordion (the "+" rotates to "×" when open) */
+details.faq-item > summary::-webkit-details-marker { display: none; }
+details.faq-item > summary span.faq-plus { transition: transform var(--dur-fast) var(--ease-tide); display: inline-block; }
+details.faq-item[open] > summary span.faq-plus { transform: rotate(45deg); }
+
 /* Mobile menu drawer */
 .mobile-menu {
   display: flex;

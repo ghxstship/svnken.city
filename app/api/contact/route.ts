@@ -16,7 +16,8 @@ export async function POST(req: Request) {
   const name = clean(data.name, 120);
   const email = clean(data.email, 200);
   const message = clean(data.message, 4000);
-  const topic = data.topic === "group" ? "group" : "general";
+  const allowedTopics = ["general", "group", "partner", "career"] as const;
+  const topic = (allowedTopics as readonly string[]).includes(data.topic as string) ? (data.topic as string) : "general";
 
   if (!name) {
     return NextResponse.json({ error: "We'll need a name for the log." }, { status: 400 });
@@ -36,14 +37,17 @@ export async function POST(req: Request) {
     email,
     party: clean(data.party, 80) || null,
     night: clean(data.night, 120) || null,
+    org: clean(data.org, 160) || null,
+    role: clean(data.role, 160) || null,
     message,
   });
 
-  return NextResponse.json({
-    ok: true,
-    message:
-      topic === "group"
-        ? "Logged. The dockmaster will write back with availability and a hold."
-        : "Logged. The crew will write you back at the email you left.",
-  });
+  const messages: Record<string, string> = {
+    group: "Logged. The dockmaster will write back with availability and a hold.",
+    partner: "Logged. Our partnerships crew will write back with the deck and next steps.",
+    career: "Logged. If the tide matches, the crew will write you for a call.",
+    general: "Logged. The crew will write you back at the email you left.",
+  };
+
+  return NextResponse.json({ ok: true, message: messages[topic] || messages.general });
 }

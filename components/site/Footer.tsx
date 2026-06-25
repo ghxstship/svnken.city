@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { RUN_LABEL } from "@/lib/shows";
+import { SocialLinks } from "@/components/site/SocialLinks";
 
 export function Footer() {
   return (
@@ -37,22 +38,25 @@ export function Footer() {
             links={[
               ["/experience", "The Voyage"],
               ["/manifest", "The Manifest"],
+              ["/gallery", "Gallery"],
               ["/tickets", "Tickets"],
               ["/venue", "The Harbor"],
             ]}
           />
           <FooterCol
-            head="Logbook"
+            head="The Dock"
             links={[
               ["/faq", "FAQ"],
               ["/group-bookings", "Group Tables"],
+              ["/partners", "Partnerships"],
+              ["/careers", "Careers"],
               ["/contact", "Contact"],
             ]}
           />
 
           <div>
             <div className="sc-eyebrow" style={{ marginBottom: "12px" }}>Find Us</div>
-            <div className="sc-small" style={{ color: "var(--text)", lineHeight: 1.9 }}>
+            <div className="sc-small" style={{ color: "var(--text)", lineHeight: 1.9, marginBottom: "16px" }}>
               {SITE.venue.name}
               <br />
               {SITE.venue.address}
@@ -60,11 +64,8 @@ export function Footer() {
               <a href={`mailto:${SITE.contact.general}`} style={{ color: "var(--brass-400)" }}>
                 {SITE.contact.general}
               </a>
-              <br />
-              <a href={SITE.contact.instagramUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--brass-400)" }}>
-                {SITE.contact.instagram}
-              </a>
             </div>
+            <SocialLinks size={36} gap={10} />
           </div>
         </div>
 

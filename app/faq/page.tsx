@@ -33,6 +33,7 @@ export default function FaqPage() {
                 {group.items.map((item) => (
                   <details
                     key={item.q}
+                    className="faq-item"
                     style={{ borderBottom: "1px solid var(--line)", padding: "4px 0" }}
                   >
                     <summary
@@ -47,7 +48,7 @@ export default function FaqPage() {
                       }}
                     >
                       <span className="sc-h4" style={{ color: "var(--text-strong)" }}>{item.q}</span>
-                      <span className="sc-label" style={{ color: "var(--brass-400)", flex: "none" }}>+</span>
+                      <span className="sc-label faq-plus" style={{ color: "var(--brass-400)", flex: "none" }}>+</span>
                     </summary>
                     <p className="sc-body" style={{ color: "var(--text-muted)", padding: "0 4px 18px", margin: 0 }}>
                       {item.a}
@@ -63,12 +64,6 @@ export default function FaqPage() {
           </div>
         </div>
       </section>
-
-      <style>{`
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] > summary span.sc-label { transform: rotate(45deg); display: inline-block; }
-        details > summary span.sc-label { transition: transform var(--dur-fast) var(--ease-tide); }
-      `}</style>
     </>
   );
 }

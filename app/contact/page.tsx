@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Eyebrow, Rule } from "@/components/ui/Atoms";
 import { ContactForm } from "@/components/site/ContactForm";
+import { SocialLinks } from "@/components/site/SocialLinks";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -39,6 +40,16 @@ export default function ContactPage() {
               </div>
               <Rule style={{ margin: "18px 0" }} />
               <div>
+                <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "2px" }}>Partnerships &amp; Sponsorship</span>
+                <a href={`mailto:${SITE.contact.partners}`}>{SITE.contact.partners}</a>
+              </div>
+              <Rule style={{ margin: "18px 0" }} />
+              <div>
+                <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "2px" }}>Careers &amp; Crew</span>
+                <a href={`mailto:${SITE.contact.careers}`}>{SITE.contact.careers}</a>
+              </div>
+              <Rule style={{ margin: "18px 0" }} />
+              <div>
                 <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "2px" }}>Press</span>
                 <a href={`mailto:${SITE.contact.press}`}>{SITE.contact.press}</a>
               </div>
@@ -51,8 +62,8 @@ export default function ContactPage() {
               </div>
               <Rule style={{ margin: "18px 0" }} />
               <div>
-                <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "2px" }}>Follow the Tide</span>
-                <a href={SITE.contact.instagramUrl} target="_blank" rel="noopener noreferrer">{SITE.contact.instagram}</a>
+                <span className="sc-label" style={{ color: "var(--brass-400)", display: "block", marginBottom: "10px" }}>Follow the Tide</span>
+                <SocialLinks size={40} gap={10} />
               </div>
             </div>
           </div>
