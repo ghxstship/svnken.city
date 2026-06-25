@@ -129,11 +129,30 @@ export function totalSeatings(): number {
   return SHOWS.reduce((n, d) => n + d.seatings.length, 0);
 }
 
-// Per-seat fare by day kind (soft-opening preview seats are reduced).
-export const FARES = { softOpening: 95, standard: 145 } as const;
+// Lowest fare by day kind — the "from" price (soft-opening nights are
+// a single open-floor fare; main/closing nights start at The Manifest).
+export const FARES = { softOpening: 129, standard: 169 } as const;
 
 export function fareFor(kind: ShowDay["kind"]): number {
   return kind === "soft-opening" ? FARES.softOpening : FARES.standard;
+}
+
+/** URL-safe slug for a seating, e.g. "2026-11-05-2000". */
+export function seatingSlug(date: string, time24: string): string {
+  return `${date}-${time24.replace(":", "")}`;
+}
+
+/** Parse a seating slug back to { date, time24 }. */
+export function parseSeatingSlug(slug: string): { date: string; time24: string } | null {
+  const m = slug.match(/^(\d{4}-\d{2}-\d{2})-(\d{2})(\d{2})$/);
+  if (!m) return null;
+  return { date: m[1], time24: `${m[2]}:${m[3]}` };
+}
+
+export function findSeating(date: string, time24: string): { day: ShowDay; seating: Seating } | null {
+  const day = SHOWS.find((d) => d.date === date);
+  const seating = day?.seatings.find((s) => s.time24 === time24);
+  return day && seating ? { day, seating } : null;
 }
 
 // ----------------------------------------------------------

@@ -28,8 +28,8 @@ export default function TicketsPage() {
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>Dates &amp; Times</h1>
           <OrnamentLabel style={{ marginBottom: "20px" }}>{RUN_LABEL}</OrnamentLabel>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "560px", margin: "0 auto" }}>
-            Every seat below is a full seated voyage with dinner included. Pick your night, pick your tide, and you&rsquo;ll be carried
-            straight to {SITE.ticketing.platform} to check out.
+            Every seat is a full five-course descent with dinner included. Pick your night and your tide, then choose your exact seats and
+            section on a live map — checkout settles on {SITE.ticketing.platform}.
           </p>
         </div>
       </section>
@@ -97,8 +97,8 @@ export default function TicketsPage() {
           </div>
           <ShowSchedule />
           <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
-            Add seatings to your hold, layer on tables and upgrades below, then check out — everything in one cart. Status updates as seats
-            move on {SITE.ticketing.platform}; sold-out seatings open a waitlist.
+            Seats-left counts update live. Pick a seating to choose your exact seats and section, layer on tables and upgrades below, then
+            check out — everything in one hold on {SITE.ticketing.platform}. Sold-out seatings open a waitlist.
           </p>
         </div>
       </section>

@@ -1,8 +1,9 @@
 import React from "react";
-import { SHOWS, STATUS_COPY, fareFor, type ShowDay, type Seating } from "@/lib/shows";
+import Link from "next/link";
+import { SHOWS, STATUS_COPY, seatingSlug, type ShowDay, type Seating } from "@/lib/shows";
+import { seatingAvailability } from "@/lib/inventory";
 import { Badge } from "@/components/ui/Badge";
 import { Tag } from "@/components/ui/Tag";
-import { AddSeatingButton } from "@/components/site/AddSeatingButton";
 
 function kindTone(kind: ShowDay["kind"]) {
   if (kind === "soft-opening") return "patina" as const;
@@ -18,37 +19,57 @@ function statusTone(s: Seating["status"]) {
 
 function SeatingRow({ s, day }: { s: Seating; day: ShowDay }) {
   const soldOut = s.status === "sold-out";
-  const fare = fareFor(day.kind);
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: "14px",
-        padding: "12px 14px",
-        borderRadius: "var(--radius-sm)",
-        border: "1px solid var(--line)",
-        background: soldOut ? "transparent" : "var(--surface-sunk)",
-        opacity: soldOut ? 0.55 : 1,
-      }}
-    >
+  const { available, total, fromPrice } = seatingAvailability(day.date, s.time24);
+  const pct = total ? available / total : 0;
+  const barColor = soldOut ? "var(--rust-500)" : pct < 0.25 ? "var(--brass-500)" : "var(--verdigris-500)";
+
+  const inner = (
+    <>
       <div style={{ display: "flex", alignItems: "center", gap: "12px", minWidth: 0 }}>
-        <span className="sc-h4" style={{ color: "var(--text-strong)", minWidth: "72px" }}>
-          {s.time}
-        </span>
-        <Badge tone={statusTone(s.status)} dot>
-          {STATUS_COPY[s.status]}
-        </Badge>
+        <span className="sc-h4" style={{ color: "var(--text-strong)", minWidth: "72px" }}>{s.time}</span>
+        <Badge tone={statusTone(s.status)} dot>{STATUS_COPY[s.status]}</Badge>
       </div>
-      <AddSeatingButton
-        id={`ticket:${day.date}:${s.time24}`}
-        name={`${day.display} · ${s.time}`}
-        price={fare}
-        buyUrl={s.buyUrl}
-        soldOut={soldOut}
-      />
-    </div>
+      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+        {/* live availability meter */}
+        <div style={{ textAlign: "right", minWidth: "84px" }}>
+          <div className="sc-tag-text" style={{ color: soldOut ? "var(--rust-400)" : "var(--text-muted)" }}>
+            {soldOut ? "0 left" : `${available} left`}
+          </div>
+          <div style={{ width: "84px", height: "3px", marginTop: "4px", background: "var(--line)", borderRadius: "2px", overflow: "hidden" }}>
+            <div style={{ width: `${Math.max(soldOut ? 0 : 4, pct * 100)}%`, height: "100%", background: barColor }} />
+          </div>
+        </div>
+        <span className="sc-label" style={{ color: soldOut ? "var(--text-faint)" : "var(--brass-400)", fontSize: "12px", whiteSpace: "nowrap" }}>
+          {soldOut ? "Waitlist" : `Select seats · from $${fromPrice} →`}
+        </span>
+      </div>
+    </>
+  );
+
+  const rowStyle: React.CSSProperties = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "14px",
+    padding: "12px 14px",
+    borderRadius: "var(--radius-sm)",
+    border: "1px solid var(--line)",
+    background: soldOut ? "transparent" : "var(--surface-sunk)",
+    opacity: soldOut ? 0.6 : 1,
+    textDecoration: "none",
+  };
+
+  if (soldOut) {
+    return (
+      <Link href="/#waitlist" style={rowStyle}>
+        {inner}
+      </Link>
+    );
+  }
+  return (
+    <Link href={`/tickets/${seatingSlug(day.date, s.time24)}`} style={rowStyle}>
+      {inner}
+    </Link>
   );
 }
 

@@ -143,11 +143,15 @@ function LineGroup({
               </div>
               {l.detail && <div className="sc-tag-text" style={{ color: "var(--text-faint)", marginTop: 2 }}>{l.detail}</div>}
             </div>
-            <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--line-strong)", borderRadius: "var(--radius-sm)", background: "var(--surface-sunk)" }}>
-              <Step onClick={() => setQty(l.id, l.qty - 1)} label="Decrease">−</Step>
-              <span className="sc-label" style={{ minWidth: 26, textAlign: "center", color: "var(--text-strong)" }}>{l.qty}</span>
-              <Step onClick={() => setQty(l.id, l.qty + 1)} label="Increase">+</Step>
-            </div>
+            {(l.maxQty ?? 99) <= 1 ? (
+              <span className="sc-tag-text" style={{ color: "var(--text-faint)", whiteSpace: "nowrap" }}>1 seat</span>
+            ) : (
+              <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--line-strong)", borderRadius: "var(--radius-sm)", background: "var(--surface-sunk)" }}>
+                <Step onClick={() => setQty(l.id, l.qty - 1)} label="Decrease">−</Step>
+                <span className="sc-label" style={{ minWidth: 26, textAlign: "center", color: "var(--text-strong)" }}>{l.qty}</span>
+                <Step onClick={() => setQty(l.id, l.qty + 1)} label="Increase">+</Step>
+              </div>
+            )}
             <div style={{ width: 70, textAlign: "right", flex: "none" }}>
               <div className="sc-body" style={{ color: "var(--text-strong)", fontWeight: 600 }}>{formatPrice(l.price * l.qty)}</div>
               <button onClick={() => remove(l.id)} className="sc-tag-text" style={{ background: "none", border: "none", color: "var(--rust-400)", cursor: "pointer", padding: 0 }}>

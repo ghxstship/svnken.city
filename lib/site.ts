@@ -69,9 +69,9 @@ export const SITE = {
   },
 
   pricing: {
-    softOpening: { label: "Soft Opening Seat", price: 95, note: "Preview night · two seatings only" },
-    standard: { label: "The Manifest", price: 145, note: "Full five-course descent · per seat" },
-    chefsPass: { label: "Chef's Pass", price: 195, note: "Counter seat at the pass — watch every plate surface" },
-    captains: { label: "Captain's Table", price: 225, note: "Front rail · wreck-cellar pairing · welcome pour" },
+    softOpening: { label: "Soft Opening Seat", price: 129, note: "Preview night · one fare, open floor" },
+    standard: { label: "The Manifest", price: 169, note: "The long communal tables · per seat" },
+    chefsPass: { label: "Chef's Pass", price: 229, note: "Counter seat at the pass — watch every plate surface" },
+    captains: { label: "Captain's Table", price: 299, note: "Front rail · wreck-cellar pairing · welcome pour" },
   },
 } as const;
