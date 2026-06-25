@@ -10,15 +10,15 @@ export const SITE = {
   parent: "Salvage City Supper Club",
   oneLiner: "There is no menu — only the manifest of what the divers brought up today.",
   description:
-    "A drowned-Florida supper club surfacing for one week inside EDC Orlando. Candlelit, underwater, built from salvage — a seated dinner-theatre voyage below the waterline.",
+    "A theatrical expedition-dining experience: a five-course descent below the waterline ending in a drowned, luminous city. The official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard — with festival shuttles, a pregame, and an afterparty.",
   url: "https://svnken.city",
 
   venue: {
-    name: "Tinker Field Infield",
-    context: "Inside the EDC Orlando festival grounds",
-    address: "287 S Tampa Ave, Orlando, FL 32805",
+    name: "Lot54 at The Vanguard",
+    context: "The official SVNKEN CITY × EDC Orlando partner venue",
+    address: "578 N Orange Ave, Orlando, FL 32801",
     city: "Orlando, FL",
-    note: "Access is through the EDC Orlando gates. A festival wristband is required to reach the infield.",
+    note: "A dinner ticket is all you need to dine — no festival wristband required. On show nights we run shuttles to and from EDC Orlando.",
   },
 
   contact: {
@@ -70,7 +70,8 @@ export const SITE = {
 
   pricing: {
     softOpening: { label: "Soft Opening Seat", price: 95, note: "Preview night · two seatings only" },
-    standard: { label: "The Manifest", price: 145, note: "Full seated voyage · per seat" },
+    standard: { label: "The Manifest", price: 145, note: "Full five-course descent · per seat" },
+    chefsPass: { label: "Chef's Pass", price: 195, note: "Counter seat at the pass — watch every plate surface" },
     captains: { label: "Captain's Table", price: 225, note: "Front rail · wreck-cellar pairing · welcome pour" },
   },
 } as const;

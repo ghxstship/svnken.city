@@ -110,7 +110,7 @@ export const DEPARTMENTS: Department[] = [
   {
     code: "XP-SAFE",
     name: "Public Safety",
-    blurb: "The crew that keeps the harbor safe inside the festival.",
+    blurb: "The crew that keeps the harbor safe through the run.",
     roles: ["Public Safety Director", "Security Guards"],
   },
   {

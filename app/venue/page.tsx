@@ -4,12 +4,13 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, PhotoPlaceholder, SectionHead } from "@/components/ui/Atoms";
+import { WeekendProgram } from "@/components/site/WeekendProgram";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "The Harbor · Tinker Field Infield",
+  title: "The Harbor · Lot54 at The Vanguard",
   description:
-    "Find SVNKEN CITY on the Tinker Field infield inside EDC Orlando. Getting there, what to bring, and what the wristband covers.",
+    "Find SVNKEN CITY at Lot54, The Vanguard — the official SVNKEN CITY × EDC Orlando partner venue in Orlando. Getting there, the festival shuttle program, and what to expect.",
 };
 
 const mapQuery = encodeURIComponent(`${SITE.venue.name}, ${SITE.venue.address}`);
@@ -22,24 +23,24 @@ export default function VenuePage() {
           <Eyebrow style={{ marginBottom: "16px" }}>The Harbor</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>{SITE.venue.name}</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "560px", margin: "0 auto" }}>
-            {SITE.venue.context}. {SITE.venue.address}.
+            {SITE.venue.context} · {SITE.venue.address}.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container split">
-          <PhotoPlaceholder label="Map — Tinker Field infield, EDC Orlando" depth="287 S Tampa Ave" h={400} />
+          <PhotoPlaceholder label="Map — Lot54 at The Vanguard, Orlando" depth="578 N Orange Ave" h={400} />
           <div>
             <Eyebrow style={{ marginBottom: "16px" }}>Getting There</Eyebrow>
-            <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "18px" }}>Through the festival gates.</h2>
+            <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "18px" }}>A drowned city in downtown Orlando.</h2>
             <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
-              SVNKEN CITY sits on the Tinker Field infield, inside the EDC Orlando footprint. {SITE.venue.note} Once you&rsquo;re through the
-              gates, follow the lantern line to the dock.
+              SVNKEN CITY surfaces at Lot54, the outdoor room at The Vanguard — minutes from downtown, and the official SVNKEN CITY × EDC
+              Orlando home for the week. {SITE.venue.note}
             </p>
             <div className="row" style={{ gap: "10px", marginBottom: "26px" }}>
-              <Tag tone="brass">Inside EDC Orlando</Tag>
-              <Tag tone="patina">Wristband required</Tag>
+              <Tag tone="patina">Official EDC Orlando venue</Tag>
+              <Tag tone="brass">No wristband to dine</Tag>
               <Tag tone="ink">Step-free access</Tag>
             </div>
             <div className="row">
@@ -52,17 +53,29 @@ export default function VenuePage() {
         </div>
       </section>
 
+      {/* EDC WEEKEND PROGRAM */}
       <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
         <div className="container section">
-          <SectionHead eyebrow="Plan Your Night" title="What to know before you cross" center style={{ marginBottom: "40px" }} />
+          <SectionHead eyebrow="The EDC Weekend" title="Pregame, shuttle, descend, afterparty" style={{ marginBottom: "16px" }} />
+          <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "640px", marginBottom: "32px" }}>
+            On festival nights, Lot54 is the hub: a pregame with shuttles to EDC Orlando, the dinner descent, and exit shuttles back into a
+            late afterparty. The dinner ticket is separate from your festival ticket — bring both for the full weekend.
+          </p>
+          <WeekendProgram />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHead eyebrow="Plan Your Night" title="What to know before you descend" center style={{ marginBottom: "40px" }} />
           <div className="cards-3">
             {[
-              ["The wristband", "A valid EDC Orlando wristband gets you onto the grounds. Your SVNKEN CITY seating ticket gets you into the room. You need both."],
-              ["Arrive early", "Get to the dock 15 minutes before your seating. Festival gates and crowds move slow — leave yourself a tide of extra time."],
-              ["Closed-toe footwear", "It&rsquo;s an infield. The ground is real and so is the salvage. Wear something you can stand the night in."],
-              ["Bag policy", "EDC Orlando&rsquo;s festival bag and security rules apply at the gates. Travel light; the room is candlelit and close."],
-              ["Climate", "The room is covered and away from the main stages — a quieter, cooler harbor in the middle of the festival.","",],
-              ["Re-entry", "When you surface, your wristband carries you back into EDC Orlando. The night is far from over."],
+              ["Dinner needs no wristband", "Your SVNKEN CITY ticket gets you into the room. A festival wristband is only for EDC Orlando itself — and the shuttles that run there on festival nights."],
+              ["Arrive 15 minutes early", "Get to the dock a quarter-hour before your seating so the crew can log you in before the room seals and the descent begins."],
+              ["Low light, haze & sound", "The descent runs dark, with theatrical haze and loud, immersive audio. Flag any sensory needs and we&rsquo;ll set your seat."],
+              ["Dress for the deep", "Shipwrecked formal rewards the room — brass, bone, deep teal. Closed-toe footwear is wise for the outdoor lot."],
+              ["Parking & rideshare", "Downtown parking and rideshare drop are close; on festival nights, lean on the shuttle program and skip the lot."],
+              ["The afterparty", "Festival nights end with exit shuttles back to Lot54 and a late afterparty — dinner guests get the door."],
             ].map(([title, body]) => (
               <Card key={title as string} interactive>
                 <h3 className="sc-h4" style={{ color: "var(--text-strong)", marginBottom: "10px" }} dangerouslySetInnerHTML={{ __html: title as string }} />
@@ -73,12 +86,12 @@ export default function VenuePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
+      <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)" }}>
+        <div className="container section">
           <Card framed style={{ padding: "clamp(28px, 4vw, 48px)", textAlign: "center" }}>
-            <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Questions about the crossing?</h2>
+            <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Questions about the descent?</h2>
             <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto 24px" }}>
-              The logbook answers most of it — tickets, access, allergies, and what the wristband covers.
+              The logbook answers most of it — tickets, shuttles, access, allergies, and the sensory warnings.
             </p>
             <div className="row-center">
               <ButtonLink href="/faq" variant="secondary">Read the Logbook</ButtonLink>

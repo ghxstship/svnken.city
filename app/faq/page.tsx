@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Logbook · FAQ",
-  description: "Everything you need before the lanterns — tickets, access, allergies, the EDC Orlando wristband, and more.",
+  description: "Everything you need before the lanterns — tickets, the EDC weekend shuttles, access, allergies, sensory notes, and more.",
 };
 
 export default function FaqPage() {

@@ -26,7 +26,7 @@ export default function HomePage() {
           </h1>
           <OrnamentLabel style={{ margin: "26px 0 30px" }}>{SITE.tagline}</OrnamentLabel>
           <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "600px", margin: "0 auto 18px" }}>
-            {SITE.oneLiner} A seated dinner-theatre voyage surfacing inside EDC Orlando — six nights only.
+            {SITE.oneLiner} A theatrical five-course descent below the waterline — the official SVNKEN CITY × EDC Orlando home, six nights only.
           </p>
           <div className="sc-tag-text" style={{ color: "var(--brass-400)", marginBottom: "34px" }}>{RUN_LABEL}</div>
           <div className="row-center">
@@ -42,7 +42,7 @@ export default function HomePage() {
               Tickets on {SITE.ticketing.platform}
             </Badge>
             <Badge tone="brass">{totalSeatings()} Seatings · 6 Nights</Badge>
-            <Badge tone="neutral">Tinker Field Infield</Badge>
+            <Badge tone="neutral">Lot54 · The Vanguard</Badge>
           </div>
         </div>
       </section>
@@ -86,8 +86,8 @@ export default function HomePage() {
               lantern light, and whatever the reef gives back.
             </p>
             <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "26px" }}>
-              For one week, SVNKEN CITY surfaces on the Tinker Field infield inside EDC Orlando. One long table. A live crew. A multi-course
-              manifest pulled from the water. You sit where the lanterns reach.
+              For one week, SVNKEN CITY surfaces at Lot54, The Vanguard — the official EDC Orlando home. One long table, a live crew, and a
+              five-course descent pulled from the water. You sit where the lanterns reach.
             </p>
             <ButtonLink href="/experience" variant="secondary">
               What to expect →
@@ -103,9 +103,9 @@ export default function HomePage() {
           <SectionHead eyebrow="The Crossing" title="Three tides, one seating" center style={{ marginBottom: "40px" }} />
           <div className="cards-3">
             {[
-              ["I", "Log in at the dock", "Arrive 15 minutes early. The crew finds your name on the manifest and the room goes under as the lanterns are lit."],
-              ["II", "Dinner as theatre", "A multi-course manifest surfaces course by course while the crew works the room. Roughly ninety minutes below the waterline."],
-              ["III", "Surface", "You leave back into EDC Orlando with the taste of the wreck still on you. Same wristband, a different world."],
+              ["I", "Board at the dock", "Arrive 15 minutes early. The crew finds your name on the manifest and the room seals as the descent begins."],
+              ["II", "Descend, course by course", "Five courses drop you a depth zone deeper while the crew works the room. Roughly ninety minutes, surface to city."],
+              ["III", "Surface", "The city ignites, then the room lifts back to warm light — and on festival nights, the afterparty carries the rest."],
             ].map(([num, title, body]) => (
               <Card key={num as string} interactive>
                 <div className="sc-wordmark" style={{ color: "var(--brass-500)", fontSize: "28px", marginBottom: "14px" }}>{num}</div>

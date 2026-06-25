@@ -5,11 +5,12 @@ import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, OrnamentLabel, PhotoPlaceholder, SectionHead, Rule } from "@/components/ui/Atoms";
 import { SITE } from "@/lib/site";
+import { RUN_OF_SHOW, RUNTIME_NOTE, ZONES } from "@/lib/descent";
 
 export const metadata: Metadata = {
   title: "The Voyage",
   description:
-    "What to expect at SVNKEN CITY — a seated dinner-theatre voyage below the waterline inside EDC Orlando. The story, the room, the crossing.",
+    "What to expect at SVNKEN CITY — a theatrical five-course descent through the ocean's depth zones, ending in a drowned, luminous city. The story, the descent, the run of show.",
 };
 
 export default function ExperiencePage() {
@@ -20,10 +21,11 @@ export default function ExperiencePage() {
         <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto" }}>
           <Eyebrow style={{ marginBottom: "20px" }}>The Voyage</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "20px" }}>
-            You don&rsquo;t watch the room. You&rsquo;re on the manifest.
+            You don&rsquo;t watch the room. You descend with it.
           </h1>
-          <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "620px", margin: "0 auto" }}>
-            SVNKEN CITY is a seated dinner-theatre voyage — part supper club, part shipwreck, staged for ninety minutes below the waterline.
+          <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "640px", margin: "0 auto" }}>
+            SVNKEN CITY is a theatrical expedition dinner — a five-course descent through the ocean&rsquo;s depth zones, staged for ninety
+            minutes, ending in the discovery of a drowned, luminous city. You board as crew.
           </p>
         </div>
       </section>
@@ -40,9 +42,34 @@ export default function ExperiencePage() {
               kitchen out of what they pulled up, lit it with lanterns, and started feeding whoever found the door.
             </p>
             <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>
-              That kitchen is Salvage City Supper Club. SVNKEN CITY is its drowned twin, surfacing for one week inside EDC Orlando before the
-              water takes the room back.
+              That kitchen is Salvage City Supper Club. SVNKEN CITY is its drowned twin — surfacing for one week at Lot54, The Vanguard, as the
+              official EDC Orlando partner venue, before the water takes the room back.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* THE DESCENT — depth zones */}
+      <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
+        <div className="container section">
+          <SectionHead eyebrow="The Descent" title="Five courses, five depths" center style={{ marginBottom: "12px" }} />
+          <p className="sc-body" style={{ color: "var(--text-muted)", textAlign: "center", maxWidth: "620px", margin: "0 auto 40px" }}>
+            The whole night reads as a dive. Each course drops you a zone deeper — the light fading, the sound thickening, the room going dark
+            — until the city ignites at the bottom.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+            {ZONES.map((z, i) => (
+              <div key={z.name} style={{ display: "grid", gridTemplateColumns: "150px 1fr", gap: "20px" }}>
+                <div style={{ textAlign: "right" }}>
+                  <div className="sc-h4" style={{ color: "var(--brass-400)" }}>{z.depth}</div>
+                </div>
+                <div style={{ borderLeft: "1px solid var(--line-brass)", paddingLeft: "22px", paddingBottom: i < ZONES.length - 1 ? "26px" : 0, position: "relative" }}>
+                  <span style={{ position: "absolute", left: "-5px", top: "5px", width: "9px", height: "9px", borderRadius: "50%", background: i === ZONES.length - 1 ? "var(--rust-500)" : "var(--brass-500)" }} />
+                  <h3 className="sc-h3" style={{ color: "var(--text-strong)", marginBottom: "4px" }}>{z.name}</h3>
+                  <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }}>{z.mood}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -69,30 +96,41 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* THE CROSSING — timeline */}
+      {/* RUN OF SHOW */}
       <section className="section">
         <div className="container-narrow">
-          <SectionHead eyebrow="The Crossing" title="How a seating runs" center style={{ marginBottom: "36px" }} />
+          <SectionHead eyebrow="The Run of Show" title="Ninety minutes, surface to city" center style={{ marginBottom: "10px" }} />
+          <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", textAlign: "center", marginBottom: "36px" }}>
+            {RUNTIME_NOTE}
+          </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-            {[
-              ["−15 min", "Log in at the dock", "Arrive a quarter-hour before your seating time. The crew finds your name and tags your table."],
-              ["00:00", "The lanterns are lit", "The doors close, the room goes under, and the first course surfaces from the rail."],
-              ["~00:40", "From the deep", "The main manifest arrives course by course while the crew works the room around you."],
-              ["~01:20", "From the grove", "Something sweet pulled from the drowned citrus, and a last pour from the wreck cellar."],
-              ["~01:30", "Surface", "You&rsquo;re back into EDC Orlando — same wristband, the taste of the wreck still on you."],
-            ].map(([time, title, body], i, arr) => (
-              <div key={time as string} style={{ display: "grid", gridTemplateColumns: "120px 1fr", gap: "20px" }}>
+            {RUN_OF_SHOW.map((b, i, arr) => (
+              <div key={b.t} style={{ display: "grid", gridTemplateColumns: "90px 1fr", gap: "18px" }} className="ros-row">
                 <div style={{ textAlign: "right" }}>
-                  <span className="sc-tag-text" style={{ color: "var(--brass-400)" }}>{time}</span>
+                  <div className="sc-tag-text" style={{ color: "var(--brass-400)" }}>{b.t}</div>
+                  <div className="sc-tag-text" style={{ color: "var(--text-faint)" }}>{b.min}</div>
                 </div>
-                <div style={{ borderLeft: "1px solid var(--line-brass)", paddingLeft: "22px", paddingBottom: i < arr.length - 1 ? "28px" : 0, position: "relative" }}>
-                  <span style={{ position: "absolute", left: "-5px", top: "4px", width: "9px", height: "9px", borderRadius: "50%", background: "var(--brass-500)" }} />
-                  <h3 className="sc-h4" style={{ color: "var(--text-strong)", marginBottom: "6px" }} dangerouslySetInnerHTML={{ __html: title as string }} />
-                  <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }} dangerouslySetInnerHTML={{ __html: body as string }} />
+                <div
+                  style={{
+                    borderLeft: `1px solid ${b.feature ? "var(--rust-500)" : "var(--line-brass)"}`,
+                    paddingLeft: "22px",
+                    paddingBottom: i < arr.length - 1 ? "24px" : 0,
+                    position: "relative",
+                  }}
+                >
+                  <span style={{ position: "absolute", left: "-5px", top: "5px", width: "9px", height: "9px", borderRadius: "50%", background: b.feature ? "var(--rust-500)" : "var(--brass-500)" }} />
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap", marginBottom: "3px" }}>
+                    <h3 className="sc-h4" style={{ color: b.feature ? "var(--rust-400)" : "var(--text-strong)", margin: 0 }}>{b.block}</h3>
+                    <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>{b.zone} · {b.depth}</span>
+                  </div>
+                  <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }}>{b.beat}</p>
                 </div>
               </div>
             ))}
           </div>
+          <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", textAlign: "center", marginTop: "26px" }}>
+            The reveal at Course V is never shown here — it surfaces once, at your table.
+          </p>
         </div>
       </section>
 
@@ -105,16 +143,20 @@ export default function ExperiencePage() {
               <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "20px" }}>Before the lanterns</h2>
               <div className="row" style={{ gap: "10px", marginBottom: "20px" }}>
                 <Tag tone="brass">~90 minutes</Tag>
-                <Tag tone="patina">Dinner included</Tag>
+                <Tag tone="patina">5 courses included</Tag>
                 <Tag tone="ink">All ages w/ guardian</Tag>
                 <Tag tone="brass">21+ for the bar</Tag>
               </div>
               <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
-                Tell us about allergies and dietary needs when you reserve and again at the dock — we log a plant-based and a shellfish-free
-                manifest for every seating.
+                A five-course descent needs to know your table in advance. Tell us about allergies and dietary needs when you reserve and again
+                at the dock — we log a plant-based and a shellfish-free manifest for every seating.
+              </p>
+              <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
+                The descent runs in <strong style={{ color: "var(--text)" }}>low light with theatrical haze and loud, immersive sound</strong>. If
+                that&rsquo;s a concern, write us and we&rsquo;ll set your seat and the night for you.
               </p>
               <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>
-                The infield room is step-free and ADA accessible. Need something specific? Write{" "}
+                The room is step-free and ADA accessible, with companion seating. Need something specific? Write{" "}
                 <a href={`mailto:${SITE.contact.general}`}>{SITE.contact.general}</a>.
               </p>
             </div>

@@ -28,7 +28,7 @@ export function Footer() {
               SVNKENCITY
             </div>
             <p className="sc-small" style={{ color: "var(--text-muted)", maxWidth: "300px", margin: "0 0 14px" }}>
-              A supper club below the waterline, surfacing for one week inside EDC Orlando. Service when the lanterns are lit.
+              A five-course descent below the waterline — the official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard.
             </p>
             <div className="sc-tag-text" style={{ color: "var(--text-faint)" }}>{RUN_LABEL}</div>
           </div>
@@ -38,6 +38,7 @@ export function Footer() {
             links={[
               ["/experience", "The Voyage"],
               ["/manifest", "The Manifest"],
+              ["/crew", "The Crew"],
               ["/gallery", "Gallery"],
               ["/shop", "Shop"],
               ["/tickets", "Tickets"],

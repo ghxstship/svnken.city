@@ -38,7 +38,7 @@ export const PARTNER_TIERS: PartnerTier[] = [
   {
     name: "Manifest Partner",
     code: "Activation",
-    blurb: "A single-night or category activation inside the festival footprint.",
+    blurb: "A single-night or category activation inside the EDC weekend program.",
     perks: [
       "Branded activation or sampling on select nights",
       "Inclusion in pre-show and social rollout",

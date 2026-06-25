@@ -7,15 +7,16 @@ import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, OrnamentLabel } from "@/components/ui/Atoms";
 import { ShowSchedule } from "@/components/site/ShowSchedule";
 import { AddExtras } from "@/components/site/AddExtras";
+import { WeekendProgram } from "@/components/site/WeekendProgram";
 import { SITE } from "@/lib/site";
 import { RUN_LABEL, totalSeatings } from "@/lib/shows";
 
 export const metadata: Metadata = {
   title: "Tickets · Dates & Times",
-  description: `SVNKEN CITY at EDC Orlando — ${RUN_LABEL}. ${totalSeatings()} seatings across six nights. Tickets on Speakeasy.`,
+  description: `SVNKEN CITY at Lot54, The Vanguard — ${RUN_LABEL}. ${totalSeatings()} seatings of the five-course descent. Tickets on Speakeasy.`,
 };
 
-const TIERS = [SITE.pricing.softOpening, SITE.pricing.standard, SITE.pricing.captains];
+const TIERS = [SITE.pricing.softOpening, SITE.pricing.standard, SITE.pricing.chefsPass, SITE.pricing.captains];
 
 export default function TicketsPage() {
   return (
@@ -47,23 +48,40 @@ export default function TicketsPage() {
       <section className="section">
         <div className="container">
           <Eyebrow style={{ marginBottom: "12px" }}>Fares</Eyebrow>
-          <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "28px" }}>Three ways aboard</h2>
-          <div className="cards-3">
-            {TIERS.map((t, i) => (
-              <Card key={t.label} framed={i === 1} interactive>
-                {i === 1 && <Tag tone="brass" style={{ position: "absolute", top: "-14px", left: "20px" }}>Most aboard</Tag>}
-                <div className="sc-eyebrow" style={{ marginBottom: "10px" }}>{t.label}</div>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "12px" }}>
-                  <span className="sc-display" style={{ color: "var(--text-strong)" }}>${t.price}</span>
-                  <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>/ seat</span>
-                </div>
-                <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }}>{t.note}</p>
-              </Card>
-            ))}
+          <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "28px" }}>Four ways aboard</h2>
+          <div className="tier-grid">
+            {TIERS.map((t) => {
+              const featured = t.label === "The Manifest";
+              return (
+                <Card key={t.label} framed={featured} interactive style={{ display: "flex", flexDirection: "column" }}>
+                  {featured && <Tag tone="brass" style={{ position: "absolute", top: "-14px", left: "20px" }}>Most aboard</Tag>}
+                  <div className="sc-eyebrow" style={{ marginBottom: "10px" }}>{t.label}</div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "12px" }}>
+                    <span className="sc-display" style={{ color: "var(--text-strong)" }}>${t.price}</span>
+                    <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>/ seat</span>
+                  </div>
+                  <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }}>{t.note}</p>
+                </Card>
+              );
+            })}
           </div>
           <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
-            Dinner is included in every fare. Wine and rum pairings poured from the wreck cellar; a zero-proof tide list logged for every seating.
+            Every fare is the full five-course descent with dinner included. Wine and rum pairings poured from the wreck cellar; a zero-proof
+            tide list logged for every seating.
           </p>
+        </div>
+      </section>
+
+      {/* EDC WEEKEND PROGRAM */}
+      <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)" }}>
+        <div className="container section">
+          <Eyebrow style={{ marginBottom: "12px" }}>The EDC Weekend</Eyebrow>
+          <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>More than dinner on festival nights</h2>
+          <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "640px", marginBottom: "30px" }}>
+            Nov 5&ndash;8, your seating sits inside the SVNKEN CITY × EDC Orlando × The Vanguard program — a pregame and shuttles to the
+            festival, then exit shuttles back to a late afterparty at Lot54.
+          </p>
+          <WeekendProgram />
         </div>
       </section>
 
@@ -103,15 +121,15 @@ export default function TicketsPage() {
         </div>
       </section>
 
-      {/* WRISTBAND NOTE + CTA */}
+      {/* VENUE NOTE + CTA */}
       <section className="section">
         <div className="container">
           <Card variant="patina" style={{ padding: "clamp(28px, 4vw, 44px)", textAlign: "center" }}>
             <Eyebrow style={{ marginBottom: "12px" }}>Before you book</Eyebrow>
-            <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>You&rsquo;ll need an EDC Orlando wristband, too.</h2>
+            <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Dinner is a separate ticket from the festival.</h2>
             <p className="sc-body" style={{ color: "var(--text)", maxWidth: "600px", margin: "0 auto 24px" }}>
-              SVNKEN CITY is staged on the Tinker Field infield inside the festival footprint. A valid EDC Orlando wristband is required to
-              reach the room in addition to your seating ticket.
+              SVNKEN CITY is staged at Lot54, The Vanguard — the official EDC Orlando partner venue. Your seating ticket is all you need to
+              dine; no festival wristband required. On festival nights, shuttles run between Lot54 and EDC Orlando.
             </p>
             <ButtonLink href="/venue" variant="secondary">
               Getting there →

@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 import { PRODUCTS } from "@/lib/merch";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/experience", "/tickets", "/manifest", "/gallery", "/shop", "/venue", "/faq", "/partners", "/careers", "/group-bookings", "/contact"];
+  const routes = ["", "/experience", "/tickets", "/manifest", "/crew", "/gallery", "/shop", "/venue", "/faq", "/partners", "/careers", "/group-bookings", "/contact"];
   const productRoutes = PRODUCTS.map((p) => `/shop/${p.handle}`);
   return [...routes, ...productRoutes].map((r) => ({
     url: `${SITE.url}${r}`,

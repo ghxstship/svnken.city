@@ -14,24 +14,28 @@ export const FAQ: FaqGroup[] = [
     items: [
       {
         q: "What is SVNKEN CITY?",
-        a: "It is the EDC Orlando surfacing of Salvage City Supper Club — a seated dinner-theatre voyage staged below the waterline. One long table, lantern light, a live crew, and a multi-course manifest pulled from the water. You are not an audience; you are on the manifest.",
+        a: "It is a theatrical expedition dinner from Salvage City Supper Club — a five-course descent through the ocean's depth zones, staged below the waterline, ending in the discovery of a drowned, luminous city. One long table, lantern light, a live crew, and a manifest pulled from the water. You are not an audience; you board as crew.",
       },
       {
         q: "How long is a seating?",
-        a: "Plan for roughly 90 minutes from the moment the lanterns are lit. Arrive 15 minutes before your seating time so the crew can log you in before the room goes under.",
+        a: "Plan for roughly 90 minutes from the moment the room seals and the descent begins. Arrive 15 minutes before your seating time so the crew can log you in.",
       },
       {
         q: "Is this a concert or a dinner?",
-        a: "Both, and neither. It is a full multi-course dinner wrapped in live performance and sound. It runs inside EDC Orlando but is its own world — a quiet, candlelit harbor away from the main stages.",
+        a: "Both, and neither. It is a full five-course dinner wrapped in live performance, projection, and sound — a descent you eat your way through. It runs at Lot54, The Vanguard, as an official EDC Orlando partner venue, but it is its own world.",
+      },
+      {
+        q: "Will you spoil the ending?",
+        a: "No. The fifth course — the city itself — is never shown on this site or anywhere else. It surfaces once, at your table, and only there.",
       },
       {
         q: "Is there a dress code?",
-        a: "Come as you are for the festival, but the room rewards a little salvage-glamour. Think shipwrecked formal — brass, bone, deep teal. Closed-toe footwear is wise on the infield.",
+        a: "The room rewards a little salvage-glamour. Think shipwrecked formal — brass, bone, deep teal. Closed-toe footwear is wise for the outdoor lot.",
       },
     ],
   },
   {
-    group: "Tickets",
+    group: "Tickets & the EDC Weekend",
     items: [
       {
         q: "Where do I buy tickets?",
@@ -39,32 +43,40 @@ export const FAQ: FaqGroup[] = [
       },
       {
         q: "How much are tickets?",
-        a: "Soft Opening preview seats are $95. The full Manifest seating is $145 per seat. The Captain's Table — front rail, wreck-cellar pairing, welcome pour — is $225. Dinner is included in every fare.",
+        a: "Soft Opening preview seats are $95. The full Manifest seating is $145. The Chef's Pass — a counter seat at the pass — is $195. The Captain's Table, with front-rail seating, wreck-cellar pairing, and a welcome pour, is $225. Every fare is the full five-course descent with dinner included.",
+      },
+      {
+        q: "Do I need an EDC Orlando wristband?",
+        a: "Not to dine. SVNKEN CITY is at Lot54, The Vanguard — a separate ticket from the festival. You only need a festival wristband for EDC Orlando itself. On festival nights (Nov 5–8) we run shuttles between Lot54 and EDC.",
+      },
+      {
+        q: "What is the EDC weekend program?",
+        a: "On festival nights, Lot54 is the hub: a 3–5 PM pregame with shuttles to EDC Orlando, the dinner descent at 5:00 / 6:30 / 8:00 PM, and exit shuttles back into a late afterparty. Dinner guests get the door to the afterparty.",
       },
       {
         q: "Are tickets refundable?",
         a: "Seats are non-refundable but transferable through Speakeasy up to 48 hours before your seating. The tide does not wait, and neither do we.",
       },
-      {
-        q: "Do I need an EDC Orlando wristband?",
-        a: "Yes. SVNKEN CITY is staged on the Tinker Field infield inside the festival footprint, so a valid EDC Orlando wristband is required to reach the room in addition to your seating ticket.",
-      },
     ],
   },
   {
-    group: "Food & Access",
+    group: "Food, Access & Sensory",
     items: [
       {
         q: "Can you handle allergies and dietary needs?",
-        a: "Yes — tell us when you reserve and again at the dock. We log a plant-based and a shellfish-free manifest for every seating. Severe allergies: write us at bonvoyage@svnken.city before your night.",
+        a: "Yes, and a five-course tasting needs to know in advance — tell us when you reserve and again at the dock. We log a plant-based and a shellfish-free manifest for every seating. Severe allergies: write bonvoyage@svnken.city before your night.",
+      },
+      {
+        q: "What are the sensory conditions?",
+        a: "The descent runs in low light with theatrical haze and loud, immersive sound and music throughout. If you are sensitive to haze, darkness, or volume, write bonvoyage@svnken.city and we will set your seat and prep the crew.",
       },
       {
         q: "Is the venue accessible?",
-        a: "The infield room is step-free and ADA accessible. If you have specific access needs, write bonvoyage@svnken.city and we will set your seat where the lanterns reach.",
+        a: "The room is step-free and ADA accessible, with companion seating. For specific access needs — mobility, assistive listening, or anything else — write bonvoyage@svnken.city and we will set your seat where the lanterns reach.",
       },
       {
         q: "Is it 21+?",
-        a: "The room is all-ages with a guardian, but alcohol service is 21+ with valid ID. Every fare includes the full food manifest regardless of age.",
+        a: "The dinner is all-ages with a guardian, but alcohol service is 21+ with valid ID. Every fare includes the full five-course manifest regardless of age. The late afterparty may carry its own age policy.",
       },
     ],
   },

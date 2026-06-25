@@ -22,7 +22,7 @@ const GALLERY: Media[] = [
   { label: "Below the waterline — teaser", provenance: "0:42", kind: "film", span: 2 },
   { label: "Drowned-grove citrus, set custard", provenance: "From the Grove", kind: "photo" },
   { label: "Vocalist under the swell light", provenance: "Show", kind: "photo", tall: true },
-  { label: "The dock at load-in", provenance: "Tinker Field", kind: "photo" },
+  { label: "The dock at load-in", provenance: "Lot54", kind: "photo" },
   { label: "Black rum cake, wreck stores", provenance: "Lot 0009", kind: "photo" },
   { label: "Surfacing — closing night film", provenance: "1:12", kind: "film" },
 ];

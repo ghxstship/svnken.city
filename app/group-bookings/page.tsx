@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Group Tables & Buyouts",
-  description: "Bring a crew to SVNKEN CITY — group tables, private seatings, and full buyouts on the Tinker Field infield during EDC Orlando.",
+  description: "Bring a crew to SVNKEN CITY — group tables, private seatings, and full buyouts at Lot54, The Vanguard, during the EDC Orlando weekend.",
 };
 
 export default function GroupBookingsPage() {
