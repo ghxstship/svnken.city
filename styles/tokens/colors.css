@@ -1,0 +1,117 @@
+/* ============================================================
+   SUNKEN CITY · COLOR TOKENS
+   A drowned-Florida supper club: abyssal teals, oxidized brass,
+   verdigris patina, sun-bleached bone, and coral rust.
+   ============================================================ */
+
+:root {
+  /* ---- Abyss (deep water darks — the house lives here) ---- */
+  --abyss-900: #07151A;   /* deepest trench */
+  --abyss-800: #0A1F26;   /* page ground */
+  --abyss-700: #0F2C34;   /* deep sea */
+  --abyss-600: #163C45;   /* hull / raised surface */
+  --abyss-500: #1F525B;   /* shoal */
+
+  /* ---- Verdigris (oxidized copper patina — signature) ---- */
+  --verdigris-700: #2E5851;
+  --verdigris-600: #3C7068;
+  --verdigris-500: #5BA396;   /* core patina */
+  --verdigris-400: #7FBFB2;
+  --verdigris-200: #B6DBD2;
+
+  /* ---- Brass (aged salvage gold — primary metal) ---- */
+  --brass-700: #7A611F;
+  --brass-600: #9C7E2C;
+  --brass-500: #C2A24A;   /* core brass */
+  --brass-400: #D6BE74;
+  --brass-200: #ECDDB0;
+
+  /* ---- Coral / Rust (Florida sun + oxidized iron) ---- */
+  --rust-700: #7E3320;
+  --rust-600: #A6452C;
+  --rust-500: #C75D43;   /* faded coral */
+  --rust-400: #DC8169;
+  --rust-200: #F0C4B6;
+
+  /* ---- Bone (sand, parchment, sea-bleached) ---- */
+  --bone-100: #F6EFDE;   /* brightest paper */
+  --bone-200: #EFE6D2;   /* core bone */
+  --bone-300: #DECFAE;
+  --bone-400: #C6B58E;
+
+  /* ---- Fog (muted grey-greens — secondary ink) ---- */
+  --fog-500: #8FA3A0;
+  --fog-400: #A9BAB6;
+  --fog-300: #C5D1CE;
+
+  /* ---- Ink (warm near-black for light surfaces) ---- */
+  --ink-900: #12100A;
+  --ink-700: #1B2A2C;
+
+  /* ===========================================================
+     SEMANTIC ALIASES
+     =========================================================== */
+
+  /* Surfaces (dark house) */
+  --bg: var(--abyss-900);
+  --surface: var(--abyss-800);
+  --surface-2: var(--abyss-700);
+  --surface-raised: var(--abyss-600);
+  --surface-sunk: var(--abyss-900);
+
+  /* Paper (light documents / menus) */
+  --paper: var(--bone-200);
+  --paper-2: var(--bone-300);
+
+  /* Text on dark */
+  --text: var(--bone-200);
+  --text-strong: var(--bone-100);
+  --text-muted: var(--fog-500);
+  --text-faint: var(--verdigris-700);
+
+  /* Text on light paper */
+  --text-ink: var(--ink-700);
+  --text-ink-muted: #5A6A66;
+
+  /* Brand accents */
+  --accent: var(--brass-500);          /* primary — brass */
+  --accent-strong: var(--brass-400);
+  --accent-2: var(--verdigris-500);    /* secondary — patina */
+  --accent-warm: var(--rust-500);      /* coral highlight */
+
+  /* Lines & borders */
+  --line: color-mix(in oklab, var(--bone-200) 14%, transparent);
+  --line-strong: color-mix(in oklab, var(--bone-200) 26%, transparent);
+  --line-brass: color-mix(in oklab, var(--brass-500) 45%, transparent);
+  --line-ink: color-mix(in oklab, var(--ink-900) 18%, transparent);
+
+  /* Status */
+  --positive: var(--verdigris-500);
+  --warning: var(--brass-500);
+  --danger: var(--rust-500);
+  --info: #5B8CA8;            /* muted sea-blue — distinct from patina */
+  --info-deep: #3E6275;
+
+  /* Focus ring */
+  --focus: var(--brass-400);
+
+  /* ---- Data-viz categorical ramp (salvage spectrum) ---- */
+  --chart-1: var(--brass-500);
+  --chart-2: var(--verdigris-500);
+  --chart-3: var(--rust-500);
+  --chart-4: #5B8CA8;        /* sea-blue */
+  --chart-5: #8C6FA8;        /* sea-urchin violet */
+  --chart-6: var(--bone-300);
+  /* Sequential (shallow → deep) */
+  --chart-seq-1: var(--verdigris-200);
+  --chart-seq-2: var(--verdigris-400);
+  --chart-seq-3: var(--verdigris-500);
+  --chart-seq-4: var(--verdigris-600);
+  --chart-seq-5: var(--verdigris-700);
+  /* Diverging (rust ↔ patina) */
+  --chart-div-neg: var(--rust-500);
+  --chart-div-mid: var(--bone-400);
+  --chart-div-pos: var(--verdigris-500);
+  --chart-grid: var(--line);
+  --chart-axis: var(--text-faint);
+}

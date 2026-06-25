@@ -1,0 +1,59 @@
+/* ============================================================
+   SUNKEN CITY · SPACING, RADIUS, SHADOW, MOTION
+   The brand is weathered and built — square corners, hairline
+   rules, deep underwater shadows. Rounding is the exception.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing (4px base, harbor rhythm) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-9: 6rem;      /* 96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* ---- Radius (mostly sharp; salvage is built, not molded) ---- */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* ---- Borders ---- */
+  --border-hair: 1px;
+  --border-rule: 2px;
+  --border-heavy: 3px;
+
+  /* ---- Shadows (deep water + engraved brass) ---- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.45);
+  --shadow-md: 0 6px 18px -6px rgba(0,0,0,0.55);
+  --shadow-lg: 0 22px 48px -16px rgba(0,0,0,0.65);
+  --shadow-deep: 0 40px 90px -30px rgba(0,0,0,0.8);
+  --shadow-inset: inset 0 1px 0 color-mix(in oklab, var(--bone-100) 8%, transparent),
+                  inset 0 -1px 2px rgba(0,0,0,0.5);
+  /* engraved brass edge for buttons / nameplates */
+  --shadow-brass: inset 0 1px 0 color-mix(in oklab, var(--brass-200) 55%, transparent),
+                  inset 0 -2px 3px color-mix(in oklab, var(--brass-700) 60%, transparent);
+  /* glow for candlelit emphasis */
+  --glow-brass: 0 0 0 1px color-mix(in oklab, var(--brass-500) 50%, transparent),
+                0 8px 30px -8px color-mix(in oklab, var(--brass-500) 40%, transparent);
+
+  /* ---- Motion (slow swell, never bouncy) ---- */
+  --ease-tide: cubic-bezier(0.33, 0, 0.2, 1);  /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* @kind other */
+  --dur-fast: 130ms;   /* @kind other */
+  --dur-base: 220ms;   /* @kind other */
+  --dur-slow: 420ms;   /* @kind other */
+
+  /* ---- Layout ---- */
+  --container: 1200px;
+  --container-narrow: 760px;
+  --container-wide: 1440px;
+}

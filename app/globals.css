@@ -1,0 +1,118 @@
+/* ============================================================
+   SVNKEN CITY · GLOBAL STYLES
+   Fonts + design-system tokens + site-level responsive helpers.
+   ============================================================ */
+
+/* Fonts are loaded via next/font in app/layout.tsx (self-hosted, no FOUT).
+   They expose --f-wordmark / --f-display / --f-body / --f-engraved / --f-tag,
+   which the design tokens below are remapped onto (see the override block). */
+
+/* Design-system tokens (order matters: vars before consumers) */
+@import url('../styles/tokens/colors.css');
+@import url('../styles/tokens/typography.css');
+@import url('../styles/tokens/spacing.css');
+@import url('../styles/tokens/system.css');
+@import url('../styles/tokens/base.css');
+@import url('../styles/tokens/type.css');
+
+/* ---- Map design-system font tokens onto the next/font variables ----
+   Overrides the family tokens from typography.css. The --f-* vars come from
+   app/layout.tsx; the trailing stacks are the system fallbacks. */
+:root {
+  --font-wordmark: var(--f-wordmark), 'Arial Black', sans-serif;
+  --font-display: var(--f-display), 'Helvetica Neue', sans-serif;
+  --font-label: var(--f-display), 'Helvetica Neue', sans-serif;
+  --font-engraved: var(--f-engraved), 'Times New Roman', serif;
+  --font-body: var(--f-body), Georgia, serif;
+  --font-tag: var(--f-tag), 'Courier New', monospace;
+}
+
+/* ---- Reset & root ---- */
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+body { min-height: 100vh; overflow-x: hidden; }
+
+a { color: var(--brass-400); }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+img { max-width: 100%; display: block; }
+
+/* ---- Layout helpers ---- */
+.container { max-width: var(--container); margin: 0 auto; padding-left: 40px; padding-right: 40px; }
+.container-narrow { max-width: var(--container-narrow); margin: 0 auto; padding-left: 40px; padding-right: 40px; }
+
+.section { padding: 84px 0; }
+.section-sm { padding: 56px 0; }
+
+/* Two-column editorial split that collapses on small screens */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Responsive auto-grid for cards */
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+
+.row { display: flex; gap: 14px; flex-wrap: wrap; }
+.row-center { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; }
+
+@media (max-width: 880px) {
+  .container, .container-narrow { padding-left: 22px; padding-right: 22px; }
+  .split { grid-template-columns: 1fr; gap: 36px; }
+  .cards-3 { grid-template-columns: 1fr; }
+  .cards-2 { grid-template-columns: 1fr; }
+  .section { padding: 60px 0; }
+  .hide-mobile { display: none !important; }
+}
+
+/* Nav */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: color-mix(in oklab, var(--abyss-900) 82%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+@media (max-width: 880px) { .site-nav { padding: 14px 20px; } }
+
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast) var(--ease-tide), border-color var(--dur-fast) var(--ease-tide);
+}
+.nav-link:hover { color: var(--brass-400); }
+.nav-link[data-active="true"] { color: var(--brass-400); border-bottom-color: var(--brass-500); }
+
+/* Anchored sections offset for sticky nav */
+.anchor { scroll-margin-top: 90px; }
+
+/* Mobile menu drawer */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 20px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--abyss-900);
+}
+.mobile-menu .nav-link { padding: 12px 0; font-size: 14px; border-bottom: 1px solid var(--line); }

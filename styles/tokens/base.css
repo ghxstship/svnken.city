@@ -1,0 +1,64 @@
+/* ============================================================
+   SUNKEN CITY · BASE ELEMENTS & TEXTURE UTILITIES
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+/* Type atoms (.sc-eyebrow, .sc-h1…, .sc-body, .sc-tag-text, etc.)
+   live in tokens/type.css — the single source of truth for type. */
+
+a { color: var(--accent-strong); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* ============================================================
+   TEXTURE / ATMOSPHERE
+   The house is candlelit and underwater. These utilities supply
+   the deep-water vignette and a faint film-grain without images.
+   ============================================================ */
+
+/* Caustic deep-water ground — layered radial swells of patina + brass */
+.sc-deep {
+  background:
+    radial-gradient(120% 90% at 18% -10%, color-mix(in oklab, var(--verdigris-600) 30%, transparent), transparent 55%),
+    radial-gradient(100% 80% at 92% 8%, color-mix(in oklab, var(--brass-600) 16%, transparent), transparent 50%),
+    radial-gradient(140% 120% at 50% 120%, var(--abyss-900), transparent 60%),
+    var(--abyss-800);
+}
+
+/* Brass hairline divider with a faded center, like an old rule */
+.sc-rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--line-brass) 18%, var(--line-brass) 82%, transparent);
+}
+
+/* Fine grain overlay — drop on a ::after of any panel */
+.sc-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+::selection { background: color-mix(in oklab, var(--brass-500) 38%, transparent); color: var(--text-strong); }

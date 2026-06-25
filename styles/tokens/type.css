@@ -1,0 +1,78 @@
+/* ============================================================
+   SUNKEN CITY · TYPOGRAPHIC ATOMS  (single source of truth)
+   Every type treatment in the system is one of these classes.
+   Surfaces must NOT hardcode font-family / size / weight / tracking —
+   they apply a class here, and every value flows from the tokens in
+   typography.css. Change a token once; the whole system follows.
+   ============================================================ */
+
+/* ---- Wordmark (Stalinist One) ---- */
+.sc-wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-indent: 0.1em;       /* balances the trailing letter-spacing */
+  line-height: 1;
+}
+
+/* ---- Display & headings (Barlow Semi Condensed) ---- */
+.sc-hero,
+.sc-display,
+.sc-h1, .sc-h2, .sc-h3, .sc-h4 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+.sc-hero    { font-size: var(--text-hero);    line-height: var(--leading-tight); }
+.sc-display { font-size: var(--text-display); }
+.sc-h1      { font-size: var(--text-h1); }
+.sc-h2      { font-size: var(--text-h2);  line-height: var(--leading-snug); }
+.sc-h3      { font-size: var(--text-h3);  line-height: var(--leading-snug); }
+.sc-h4      { font-size: var(--text-h4);  line-height: var(--leading-snug); }
+
+/* Modifier: signage-caps treatment for headings (e.g. "RECLAIMED FROM THE DEEP") */
+.sc-caps {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---- Engraved-serif accent (Cinzel) — opt-in flourish only ---- */
+.sc-engraved {
+  font-family: var(--font-engraved);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* ---- Body & prose (EB Garamond) ---- */
+.sc-lead  { font-family: var(--font-body); font-size: var(--text-lead); line-height: var(--leading-relaxed); font-weight: var(--weight-body); }
+.sc-body  { font-family: var(--font-body); font-size: var(--text-body); line-height: var(--leading-relaxed); font-weight: var(--weight-body); }
+.sc-small { font-family: var(--font-body); font-size: var(--text-sm);   line-height: var(--leading-normal);  font-weight: var(--weight-body); }
+.sc-italic { font-style: italic; }
+
+/* ---- Eyebrow / signage label (Barlow caps) ---- */
+.sc-eyebrow {
+  font-family: var(--font-label);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--accent);
+}
+.sc-label {
+  font-family: var(--font-label);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---- Salvage tag / manifest stamp (Special Elite) ---- */
+.sc-tag-text {
+  font-family: var(--font-tag);
+  letter-spacing: 0.02em;
+  font-size: var(--text-xs);
+}

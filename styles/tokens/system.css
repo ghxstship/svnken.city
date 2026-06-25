@@ -1,0 +1,48 @@
+/* ============================================================
+   SUNKEN CITY · SYSTEM SCALES
+   Gradients, opacity, z-index, breakpoints, aspect ratios,
+   and density. Kept out of spacing.css for clarity.
+   ============================================================ */
+
+:root {
+  /* ---- Signature gradients (tokenized) ---- */
+  --gradient-brass: linear-gradient(180deg, var(--brass-400), var(--brass-600));   /* @kind other */
+  --gradient-patina: linear-gradient(180deg, var(--verdigris-500), var(--verdigris-700)); /* @kind other */
+  --gradient-rust: linear-gradient(180deg, var(--rust-500), var(--rust-700));      /* @kind other */
+  --gradient-deep: radial-gradient(120% 100% at 50% -10%, var(--abyss-600), var(--abyss-900) 70%); /* @kind other */
+  --gradient-tide: linear-gradient(90deg, transparent, var(--line-brass) 18%, var(--line-brass) 82%, transparent); /* @kind other */
+
+  /* ---- Opacity scale ---- */
+  --opacity-0: 0;        /* @kind other */
+  --opacity-disabled: 0.5;  /* @kind other */
+  --opacity-muted: 0.7;  /* @kind other */
+  --opacity-veil: 0.85;  /* @kind other */
+  --opacity-full: 1;     /* @kind other */
+
+  /* ---- Z-index layers ---- */
+  --z-base: 0;        /* @kind other */
+  --z-raised: 10;     /* @kind other */
+  --z-sticky: 50;     /* @kind other */
+  --z-dropdown: 120;  /* @kind other */
+  --z-overlay: 150;   /* @kind other */
+  --z-toast: 200;     /* @kind other */
+  --z-tooltip: 250;   /* @kind other */
+
+  /* ---- Breakpoints (reference values; use in media queries) ---- */
+  --bp-sm: 640px;   /* @kind other */
+  --bp-md: 768px;   /* @kind other */
+  --bp-lg: 1024px;  /* @kind other */
+  --bp-xl: 1280px;  /* @kind other */
+
+  /* ---- Aspect ratios ---- */
+  --aspect-square: 1 / 1;   /* @kind other */
+  --aspect-photo: 4 / 3;    /* @kind other */
+  --aspect-video: 16 / 9;   /* @kind other */
+  --aspect-poster: 2 / 3;   /* @kind other */
+  --aspect-wide: 21 / 9;    /* @kind other */
+
+  /* ---- Density (comfortable default; compact overrides in themes.css) ---- */
+  --density-row: 13px;       /* @kind other */
+  --density-control: 12px;   /* @kind other */
+  --density-gap: var(--space-4); /* @kind other */
+}
