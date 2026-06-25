@@ -34,6 +34,9 @@ body { min-height: 100vh; overflow-x: hidden; }
 
 a { color: var(--brass-400); }
 
+/* A wordmark is a lockup — it must never wrap to a second line. */
+.sc-wordmark { white-space: nowrap; }
+
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 img { max-width: 100%; display: block; }

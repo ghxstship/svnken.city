@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { Badge } from "@/components/ui/Badge";
 import { Eyebrow, OrnamentLabel, PhotoPlaceholder, SectionHead } from "@/components/ui/Atoms";
+import { Wordmark } from "@/components/ui/Wordmark";
 import { NotifyForm } from "@/components/site/NotifyForm";
 import { SITE } from "@/lib/site";
 import { SHOWS, RUN_LABEL, totalSeatings } from "@/lib/shows";
@@ -20,19 +21,8 @@ export default function HomePage() {
           <Eyebrow style={{ letterSpacing: "var(--tracking-mega)", marginBottom: "26px" }}>
             Below the Waterline · A Salvage City Voyage
           </Eyebrow>
-          <h1
-            className="sc-wordmark"
-            style={{
-              color: "var(--bone-100)",
-              // Stalinist One is wide — scale conservatively so 10 tracked caps never clip.
-              fontSize: "clamp(1.6rem, 7.2vw, 5rem)",
-              textShadow: "0 4px 44px rgba(0,0,0,.7)",
-              margin: 0,
-              maxWidth: "100%",
-              overflowWrap: "break-word",
-            }}
-          >
-            SVNKENCITY
+          <h1 style={{ margin: "0 auto", width: "min(100%, 720px)", filter: "drop-shadow(0 4px 44px rgba(0,0,0,.7))" }}>
+            <Wordmark fill="var(--bone-100)" />
           </h1>
           <OrnamentLabel style={{ margin: "26px 0 30px" }}>{SITE.tagline}</OrnamentLabel>
           <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "600px", margin: "0 auto 18px" }}>
