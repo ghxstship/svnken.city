@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: { seating: string } }): M
   if (!found) return { title: "Select Seats" };
   return {
     title: `${found.day.display} · ${found.seating.time} · Select Seats`,
-    description: `Choose your seats and section for the ${found.day.display} ${found.seating.time} descent at SVNKEN CITY.`,
+    description: `Choose your seats and section for the ${found.day.display} ${found.seating.time} voyage at SVNKEN CITY.`,
   };
 }
 

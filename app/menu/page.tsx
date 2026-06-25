@@ -7,20 +7,20 @@ import { MANIFEST, PAIRING_NOTE, WITHHOLD_NOTE } from "@/lib/manifest";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "The Manifest",
+  title: "Menu",
   description:
-    "The five-course descent at SVNKEN CITY — one plate per ocean depth zone, from the sunlight down to the drowned city. There is no menu, only the manifest.",
+    "The five-course menu at SVNKEN CITY — global fusion meets modern comfort, one plate per fathom, from the sunlit shallows to the drowned city. Pulled from the water and plated for the deep.",
 };
 
-export default function ManifestPage() {
+export default function MenuPage() {
   return (
     <>
       <section className="sc-deep sc-grain" style={{ position: "relative", overflow: "hidden", padding: "84px 24px 48px", textAlign: "center" }}>
         <div style={{ position: "relative", maxWidth: "760px", margin: "0 auto" }}>
-          <Eyebrow style={{ marginBottom: "14px" }}>A Five-Course Descent · Subject to the Tide</Eyebrow>
-          <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>The Manifest</h1>
+          <Eyebrow style={{ marginBottom: "14px" }}>A Five-Course Menu · Subject to the Tide</Eyebrow>
+          <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>The Menu</h1>
           <p className="sc-lead sc-italic" style={{ color: "var(--text-muted)", margin: 0 }}>
-            Five courses, one per depth — dropping from the sunlight into the drowned city.
+            Global fusion meets modern comfort — five courses, one per fathom, plated from the shallows down to the drowned city.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function ManifestPage() {
           <div style={{ maxWidth: "560px", margin: "26px auto 0", textAlign: "center" }}>
             <OrnamentLabel style={{ marginBottom: "16px" }}>Subject to the tide</OrnamentLabel>
             <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", margin: 0 }}>
-              The manifest changes with the catch. What you see here is a sample descent — your seating&rsquo;s manifest is logged the morning
+              The menu changes with the catch. What you see here is a sample voyage — your seating&rsquo;s menu is logged the morning
               of and may surface differently.
             </p>
           </div>

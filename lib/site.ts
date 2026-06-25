@@ -10,7 +10,7 @@ export const SITE = {
   parent: "Salvage City Supper Club",
   oneLiner: "There is no menu — only the manifest of what the divers brought up today.",
   description:
-    "A theatrical expedition-dining experience: a five-course descent below the waterline ending in a drowned, luminous city. The official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard — with festival shuttles, a pregame, and an afterparty.",
+    "A theatrical expedition-dining experience: a five-course voyage below the waterline ending in a drowned, luminous city. The official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard — with festival shuttles, a pregame, and an afterparty.",
   url: "https://svnken.city",
 
   venue: {

@@ -7,7 +7,7 @@ import { CartButton } from "@/components/shop/CartButton";
 
 const LINKS: [string, string][] = [
   ["/experience", "Experience"],
-  ["/manifest", "Menu"],
+  ["/menu", "Menu"],
   ["/gallery", "Gallery"],
   ["/venue", "Venue"],
   ["/shop", "Shoppe"],

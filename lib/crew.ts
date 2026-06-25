@@ -1,6 +1,6 @@
 // ============================================================
 // SVNKEN CITY · THE EXPEDITION CREW (public-facing)
-// The team that runs the descent, framed as an expedition roster.
+// The team that runs the voyage, framed as an expedition roster.
 // Names are withheld until the run; roles are real.
 // ============================================================
 
@@ -17,13 +17,13 @@ export const CREW: CrewMember[] = [
   {
     role: "Expedition Lead",
     rank: "Chief Scientist · Host",
-    bio: "Your narrator and dockmaster. Threads the night's field dispatches from the surface down to the city, and never breaks the descent.",
+    bio: "Your narrator and dockmaster. Threads the night's field dispatches from the surface down to the city, and never breaks the voyage.",
     station: "The Bridge",
   },
   {
     role: "Executive Chef",
     rank: "Galley Command",
-    bio: "Builds the five-course descent from whatever the divers bring up — one plate per depth zone, the catch dictating the manifest.",
+    bio: "Builds the five-course voyage from whatever the divers bring up — one plate per depth zone, the catch dictating the manifest.",
     station: "The Pass",
   },
   {
@@ -41,7 +41,7 @@ export const CREW: CrewMember[] = [
   {
     role: "Music Director",
     rank: "The Soundscape",
-    bio: "Scores the dive — an original bed that low-passes and deepens with the descent, then ignites at the reveal.",
+    bio: "Scores the dive — an original bed that low-passes and deepens with the voyage, then ignites at the reveal.",
     station: "The Deck",
   },
   {

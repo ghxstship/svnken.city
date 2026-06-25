@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Community · The Salvage Society",
   description:
-    "Join the SVNKEN CITY community — the Salvage Society. Drop alerts and the night's manifest, the crew on social, ambassador tables, and your own descent shared with the deep.",
+    "Join the SVNKEN CITY community — the Salvage Society. Drop alerts and the night's manifest, the crew on social, ambassador tables, and your own voyage shared with the deep.",
 };
 
 const WAYS: [string, string, string][] = [
@@ -26,7 +26,7 @@ const WAYS: [string, string, string][] = [
     "Social",
   ],
   [
-    "Share Your Descent",
+    "Share Your Voyage",
     "Post your night with #SVNKENCITY. The best captures from the deep get re-surfaced across our channels and the media gallery.",
     "#SVNKENCITY",
   ],

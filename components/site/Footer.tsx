@@ -28,27 +28,27 @@ export function Footer() {
               SVNKENCITY
             </div>
             <p className="sc-small" style={{ color: "var(--text-muted)", maxWidth: "300px", margin: "0 0 14px" }}>
-              A five-course descent below the waterline — the official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard.
+              A five-course voyage below the waterline — the official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard.
             </p>
             <div className="sc-tag-text" style={{ color: "var(--text-faint)" }}>{RUN_LABEL}</div>
           </div>
 
           <FooterCol
-            head="Voyage"
+            head="Explore"
             links={[
-              ["/experience", "The Voyage"],
-              ["/manifest", "The Manifest"],
-              ["/crew", "The Crew"],
+              ["/experience", "Experience"],
+              ["/menu", "Menu"],
               ["/gallery", "Gallery"],
+              ["/venue", "Venue"],
               ["/shop", "Shoppe"],
               ["/community", "Community"],
               ["/tickets", "Tickets"],
-              ["/venue", "The Harbor"],
             ]}
           />
           <FooterCol
             head="The Dock"
             links={[
+              ["/crew", "The Crew"],
               ["/faq", "FAQ"],
               ["/group-bookings", "Group Tables"],
               ["/partners", "Partnerships"],

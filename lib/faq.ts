@@ -14,15 +14,15 @@ export const FAQ: FaqGroup[] = [
     items: [
       {
         q: "What is SVNKEN CITY?",
-        a: "It is a theatrical expedition dinner from Salvage City Supper Club — a five-course descent through the ocean's depth zones, staged below the waterline, ending in the discovery of a drowned, luminous city. One long table, lantern light, a live crew, and a manifest pulled from the water. You are not an audience; you board as crew.",
+        a: "It is a theatrical expedition dinner from Salvage City Supper Club — a five-course voyage through the ocean's depth zones, staged below the waterline, ending in the discovery of a drowned, luminous city. One long table, lantern light, a live crew, and a manifest pulled from the water. You are not an audience; you board as crew.",
       },
       {
         q: "How long is a seating?",
-        a: "Plan for roughly 90 minutes from the moment the room seals and the descent begins. Arrive 15 minutes before your seating time so the crew can log you in.",
+        a: "Plan for roughly 90 minutes from the moment the room seals and the voyage begins. Arrive 15 minutes before your seating time so the crew can log you in.",
       },
       {
         q: "Is this a concert or a dinner?",
-        a: "Both, and neither. It is a full five-course dinner wrapped in live performance, projection, and sound — a descent you eat your way through. It runs at Lot54, The Vanguard, as an official EDC Orlando partner venue, but it is its own world.",
+        a: "Both, and neither. It is a full five-course dinner wrapped in live performance, projection, and sound — a voyage you eat your way through. It runs at Lot54, The Vanguard, as an official EDC Orlando partner venue, but it is its own world.",
       },
       {
         q: "Will you spoil the ending?",
@@ -43,7 +43,7 @@ export const FAQ: FaqGroup[] = [
       },
       {
         q: "How much are tickets?",
-        a: "Soft Opening preview seats are $95. The full Manifest seating is $145. The Chef's Pass — a counter seat at the pass — is $195. The Captain's Table, with front-rail seating, wreck-cellar pairing, and a welcome pour, is $225. Every fare is the full five-course descent with dinner included.",
+        a: "Soft Opening preview seats are $95. The full Manifest seating is $145. The Chef's Pass — a counter seat at the pass — is $195. The Captain's Table, with front-rail seating, wreck-cellar pairing, and a welcome pour, is $225. Every fare is the full five-course voyage with dinner included.",
       },
       {
         q: "Do I need an EDC Orlando wristband?",
@@ -51,7 +51,7 @@ export const FAQ: FaqGroup[] = [
       },
       {
         q: "What is the EDC weekend program?",
-        a: "On festival nights, Lot54 is the hub: a 3–5 PM pregame with shuttles to EDC Orlando, the dinner descent at 5:00 / 6:30 / 8:00 PM, and exit shuttles back into a late afterparty. Dinner guests get the door to the afterparty.",
+        a: "On festival nights, Lot54 is the hub: a 3–5 PM pregame with shuttles to EDC Orlando, the dinner voyage at 5:00 / 6:30 / 8:00 PM, and exit shuttles back into a late afterparty. Dinner guests get the door to the afterparty.",
       },
       {
         q: "Are tickets refundable?",
@@ -68,7 +68,7 @@ export const FAQ: FaqGroup[] = [
       },
       {
         q: "What are the sensory conditions?",
-        a: "The descent runs in low light with theatrical haze and loud, immersive sound and music throughout. If you are sensitive to haze, darkness, or volume, write bonvoyage@svnken.city and we will set your seat and prep the crew.",
+        a: "The voyage runs in low light with theatrical haze and loud, immersive sound and music throughout. If you are sensitive to haze, darkness, or volume, write bonvoyage@svnken.city and we will set your seat and prep the crew.",
       },
       {
         q: "Is the venue accessible?",

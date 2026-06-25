@@ -6,9 +6,11 @@ import { Badge } from "@/components/ui/Badge";
 import { Eyebrow, OrnamentLabel, PhotoPlaceholder, SectionHead } from "@/components/ui/Atoms";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { NotifyForm } from "@/components/site/NotifyForm";
+import { SensesSection } from "@/components/site/Senses";
 import { SITE } from "@/lib/site";
 import { SHOWS, RUN_LABEL, totalSeatings } from "@/lib/shows";
 import { MANIFEST } from "@/lib/manifest";
+import { IMG } from "@/lib/images";
 
 export default function HomePage() {
   const previewDishes = MANIFEST[1].items.slice(0, 3);
@@ -27,7 +29,7 @@ export default function HomePage() {
           <OrnamentLabel style={{ margin: "26px 0 30px" }}>{SITE.tagline}</OrnamentLabel>
           <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "640px", margin: "0 auto 16px" }}>
             At the turn of the tide, a sunken city rises from the dark — its drowned cathedral still tolling through the water — and for six
-            nights, it opens its gates. Descend through five courses and five fathoms, where the score breaks electric, aerialists drift past as
+            nights, it opens its gates. Venture through five courses and five fathoms, where the score breaks electric, aerialists drift past as
             creatures of the deep, and a lost, luminous empire surfaces plate by plate. There is no menu — only the manifest of what the divers
             brought up today.
           </p>
@@ -94,13 +96,13 @@ export default function HomePage() {
             </p>
             <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "26px" }}>
               For one week, SVNKEN CITY surfaces at Lot54, The Vanguard — the official EDC Orlando home. One long table, a live crew, and a
-              five-course descent pulled from the water. You sit where the lanterns reach.
+              five-course voyage pulled from the water. You sit where the lanterns reach.
             </p>
             <ButtonLink href="/experience" variant="secondary">
               What to expect →
             </ButtonLink>
           </div>
-          <PhotoPlaceholder label="Photo — The Wreck Bar at first seating" depth="Pier 9" h={360} />
+          <PhotoPlaceholder label="The Wreck Bar at first seating" depth="Pier 9" src={IMG.room[1]} h={360} />
         </div>
       </section>
 
@@ -129,14 +131,14 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "16px", marginBottom: "28px", flexWrap: "wrap" }}>
             <SectionHead eyebrow="Reclaimed from the Deep" title="Pulled this morning" />
-            <ButtonLink href="/manifest" variant="ghost">
-              See the full manifest →
+            <ButtonLink href="/menu" variant="ghost">
+              See the full menu →
             </ButtonLink>
           </div>
           <div className="cards-3">
-            {previewDishes.map((dish) => (
+            {previewDishes.map((dish, i) => (
               <Card key={dish.name} interactive style={{ padding: 0, overflow: "hidden" }}>
-                <PhotoPlaceholder label={`Photo — ${dish.name}`} />
+                <PhotoPlaceholder label={dish.name} depth={dish.lot} src={IMG.food[i % IMG.food.length]} />
                 <div style={{ padding: "var(--space-5)" }}>
                   <h3 className="sc-h4" style={{ color: "var(--text-strong)", marginBottom: "8px" }}>{dish.name}</h3>
                   <p className="sc-small sc-italic" style={{ color: "var(--text-muted)", marginBottom: "14px" }}>{dish.desc}</p>
@@ -148,6 +150,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ---------- FIVE SENSES ---------- */}
+      <SensesSection dark />
+
       {/* ---------- TICKETS CTA ---------- */}
       <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)" }}>
         <div className="container section">
@@ -157,7 +162,7 @@ export default function HomePage() {
               Claim a seat below the waterline.
             </h2>
             <p className="sc-lead" style={{ color: "var(--text-muted)", maxWidth: "560px", margin: "0 auto 28px" }}>
-              Seats run from ${SITE.pricing.softOpening.price}, dinner and the whole descent included. The book fills from the bottom up, and
+              Seats run from ${SITE.pricing.softOpening.price}, dinner and the whole voyage included. The book fills from the bottom up, and
               when a tide&rsquo;s gone it&rsquo;s gone — the depths don&rsquo;t hold a table. Best-kept secret below sea level, while it lasts.
             </p>
             <div className="row-center">

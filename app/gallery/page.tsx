@@ -4,27 +4,28 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Atoms";
 import { SITE } from "@/lib/site";
+import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Media Gallery",
-  description: "Stills and film from below the waterline — the room, the manifest, and the crew of SVNKEN CITY at EDC Orlando.",
+  description: "Stills and film from below the waterline — lost ruins, the festival pulse, the table, and the company of SVNKEN CITY at EDC Orlando.",
 };
 
-type Media = { label: string; provenance: string; kind: "photo" | "film"; span?: number; tall?: boolean };
+type Media = { label: string; provenance: string; kind: "photo" | "film"; span?: number; tall?: boolean; src: string };
 
 const GALLERY: Media[] = [
-  { label: "The Wreck Bar at first seating", provenance: "Pier 9", kind: "photo", span: 2, tall: true },
-  { label: "Reef snapper, charred whole", provenance: "Dive 14m", kind: "photo" },
-  { label: "Lantern line, full room", provenance: "Lot 0447", kind: "film" },
-  { label: "Wreck oysters off the hull", provenance: "Pier 9", kind: "photo" },
-  { label: "The crew works the rail", provenance: "Nov 7", kind: "photo", tall: true },
-  { label: "Salt-cured cobia, plated", provenance: "Lot 0451", kind: "photo" },
-  { label: "Below the waterline — teaser", provenance: "0:42", kind: "film", span: 2 },
-  { label: "Drowned-grove citrus, set custard", provenance: "From the Grove", kind: "photo" },
-  { label: "Vocalist under the swell light", provenance: "Show", kind: "photo", tall: true },
-  { label: "The dock at load-in", provenance: "Lot54", kind: "photo" },
-  { label: "Black rum cake, wreck stores", provenance: "Lot 0009", kind: "photo" },
-  { label: "Surfacing — closing night film", provenance: "1:12", kind: "film" },
+  { label: "Lost ruins below the waterline", provenance: "The Sights", kind: "photo", span: 2, tall: true, src: IMG.ruins[0] },
+  { label: "The score breaks electric", provenance: "The Sounds", kind: "film", src: IMG.sound[0] },
+  { label: "Aerialists, creatures of the deep", provenance: "The Company", kind: "photo", tall: true, src: IMG.company[0] },
+  { label: "Salt air, coastal wind", provenance: "The Scents", kind: "photo", src: IMG.sea[0] },
+  { label: "Global fusion, plated for the deep", provenance: "The Tastes", kind: "photo", src: IMG.food[0] },
+  { label: "The wreck bar, candlelit", provenance: "The Room", kind: "photo", src: IMG.room[0] },
+  { label: "A drowned colonnade", provenance: "0:42", kind: "film", span: 2, src: IMG.ruins[1] },
+  { label: "Wood, rope, and brine", provenance: "The Textures", kind: "photo", src: IMG.textures[0] },
+  { label: "The festival pulse", provenance: "Nov 7", kind: "photo", tall: true, src: IMG.sound[1] },
+  { label: "Global fusion, course two", provenance: "The Tastes", kind: "photo", src: IMG.food[1] },
+  { label: "The long table, lit low", provenance: "The Room", kind: "photo", src: IMG.room[2] },
+  { label: "Surfacing — closing film", provenance: "1:12", kind: "film", src: IMG.sea[1] },
 ];
 
 function Tile({ m }: { m: Media }) {
@@ -39,15 +40,16 @@ function Tile({ m }: { m: Media }) {
         borderRadius: "var(--radius-md)",
         overflow: "hidden",
         border: "1px solid var(--line)",
-        background: isFilm
-          ? "radial-gradient(120% 120% at 70% 0%, var(--abyss-600), var(--abyss-900) 72%)"
-          : "radial-gradient(120% 120% at 30% 0%, var(--verdigris-700), var(--abyss-900) 70%)",
+        background: "var(--abyss-800)",
         display: "flex",
         alignItems: "flex-end",
         padding: "16px",
         boxShadow: "var(--shadow-md)",
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={m.src} alt={m.label} loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      <span style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(7,21,26,.15) 35%, rgba(7,21,26,.82))" }} />
       {isFilm && (
         <span
           aria-hidden
@@ -98,7 +100,7 @@ export default function GalleryPage() {
           <Eyebrow style={{ marginBottom: "16px" }}>Media Gallery</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>From below the waterline</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto" }}>
-            Stills and film of the room, the manifest, and the crew. Fresh capture drops through the run, Nov 4&ndash;9.
+            Lost ruins, the festival pulse, the table, and the company — caught below the waterline. Fresh capture drops through the run, Nov 4&ndash;9.
           </p>
         </div>
       </section>

@@ -5,11 +5,14 @@ import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, PhotoPlaceholder, SectionHead } from "@/components/ui/Atoms";
 import { CREW, CREW_NOTE } from "@/lib/crew";
+import { IMG } from "@/lib/images";
+
+const CREW_IMG = [IMG.company[0], IMG.room[3], IMG.ruins[2], IMG.sound[2], IMG.company[1], IMG.textures[1]];
 
 export const metadata: Metadata = {
   title: "The Crew",
   description:
-    "The expedition team behind SVNKEN CITY — host, chef, creative and show directors, composer, and the company of performers who run the descent.",
+    "The expedition team behind SVNKEN CITY — host, chef, creative and show directors, composer, and the company of performers who run the voyage.",
 };
 
 export default function CrewPage() {
@@ -18,7 +21,7 @@ export default function CrewPage() {
       <section className="sc-deep sc-grain" style={{ position: "relative", overflow: "hidden", padding: "84px 24px 56px", textAlign: "center" }}>
         <div style={{ position: "relative", maxWidth: "760px", margin: "0 auto" }}>
           <Eyebrow style={{ marginBottom: "16px" }}>The Expedition</Eyebrow>
-          <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>The crew of the descent</h1>
+          <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>The crew of the voyage</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "560px", margin: "0 auto" }}>
             A supper club is only as good as the hands that run it. Meet the expedition team that takes the room from the surface to the city,
             night after night.
@@ -30,9 +33,9 @@ export default function CrewPage() {
         <div className="container">
           <SectionHead eyebrow="The Roster" title="Who takes you down" style={{ marginBottom: "32px" }} />
           <div className="cards-3">
-            {CREW.map((m) => (
+            {CREW.map((m, i) => (
               <Card key={m.role} interactive style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <PhotoPlaceholder label={`Crew — ${m.role}`} depth={m.station} h={220} />
+                <PhotoPlaceholder label={m.role} depth={m.station} src={CREW_IMG[i % CREW_IMG.length]} h={220} />
                 <div style={{ padding: "var(--space-5)", display: "flex", flexDirection: "column", flex: 1 }}>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px", marginBottom: "4px" }}>
                     <h3 className="sc-h4" style={{ color: "var(--text-strong)", margin: 0 }}>{m.role}</h3>

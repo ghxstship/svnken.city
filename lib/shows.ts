@@ -39,7 +39,7 @@ export const SHOWS: ShowDay[] = [
     display: "Wed · Nov 4",
     kind: "soft-opening",
     label: "Soft Opening",
-    blurb: "Two preview descents as the city surfaces for the first time. Reduced fare, full five-course voyage.",
+    blurb: "Two preview voyages as the city surfaces for the first time. Reduced fare, full five-course voyage.",
     festivalProgram: false,
     seatings: [
       { time24: "18:30", time: "6:30 PM", status: "limited", buyUrl: buy("nov-4-630pm") },
@@ -52,7 +52,7 @@ export const SHOWS: ShowDay[] = [
     display: "Thu · Nov 5",
     kind: "main",
     label: "Festival Run",
-    blurb: "Three descents nightly, inside the EDC weekend program — pregame, shuttles, and afterparty.",
+    blurb: "Three voyages nightly, inside the EDC weekend program — pregame, shuttles, and afterparty.",
     festivalProgram: true,
     seatings: [
       { time24: "17:00", time: "5:00 PM", status: "open", buyUrl: buy("nov-5-500pm") },
@@ -66,7 +66,7 @@ export const SHOWS: ShowDay[] = [
     display: "Fri · Nov 6",
     kind: "main",
     label: "Festival Run",
-    blurb: "Three descents nightly. Friday tides run loud — book early.",
+    blurb: "Three voyages nightly. Friday tides run loud — book early.",
     festivalProgram: true,
     seatings: [
       { time24: "17:00", time: "5:00 PM", status: "open", buyUrl: buy("nov-6-500pm") },
@@ -80,7 +80,7 @@ export const SHOWS: ShowDay[] = [
     display: "Sat · Nov 7",
     kind: "main",
     label: "Festival Run",
-    blurb: "Three descents nightly. The biggest night of the run.",
+    blurb: "Three voyages nightly. The biggest night of the run.",
     festivalProgram: true,
     seatings: [
       { time24: "17:00", time: "5:00 PM", status: "limited", buyUrl: buy("nov-7-500pm") },
@@ -94,7 +94,7 @@ export const SHOWS: ShowDay[] = [
     display: "Sun · Nov 8",
     kind: "main",
     label: "Festival Run",
-    blurb: "Three descents nightly, with the full EDC weekend program.",
+    blurb: "Three voyages nightly, with the full EDC weekend program.",
     festivalProgram: true,
     seatings: [
       { time24: "17:00", time: "5:00 PM", status: "open", buyUrl: buy("nov-8-500pm") },
@@ -108,7 +108,7 @@ export const SHOWS: ShowDay[] = [
     display: "Mon · Nov 9",
     kind: "closing",
     label: "Closing Night",
-    blurb: "Two final descents before the water takes the city back.",
+    blurb: "Two final voyages before the water takes the city back.",
     festivalProgram: false,
     seatings: [
       { time24: "18:30", time: "6:30 PM", status: "limited", buyUrl: buy("nov-9-630pm") },
@@ -174,7 +174,7 @@ export const WEEKEND_PROGRAM: ProgramBeat[] = [
   },
   {
     time: "5:00 · 6:30 · 8:00 PM",
-    title: "The Descent — Dinner Seatings",
+    title: "The Expedition — Dinner Seatings",
     detail: "Three seatings of the five-course voyage below the waterline. Pick your tide on the schedule below.",
   },
   {

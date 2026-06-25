@@ -1,5 +1,5 @@
 // ============================================================
-// SVNKEN CITY · THE MANIFEST — a five-course descent
+// SVNKEN CITY · THE MANIFEST — a five-course voyage
 // The menu is the narrative: five courses, one per ocean depth
 // zone, dropping from the sunlight into the drowned city.
 // "There is no menu — only the manifest of what the divers
@@ -31,7 +31,7 @@ export const MANIFEST: Course[] = [
     course: "Course I",
     zone: "The Sunlight",
     depth: "0 – 200 m",
-    beat: "The light is still ours. The vessel seals and the descent begins.",
+    beat: "The light is still ours. The vessel seals and the voyage begins.",
     pairing: "Sparkling, bone-dry",
     items: [
       { name: "Wreck Oysters, half dozen", desc: "green peppercorn mignonette, brine ice, edible sea-foam", lot: "Pier 9" },

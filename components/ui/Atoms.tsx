@@ -30,11 +30,14 @@ export function PhotoPlaceholder({
   label,
   depth,
   h = 220,
+  src,
   style,
 }: {
   label: string;
   depth?: string;
   h?: number | string;
+  /** real image URL — when set, renders the photo with a provenance scrim */
+  src?: string;
   style?: React.CSSProperties;
 }) {
   return (
@@ -46,13 +49,25 @@ export function PhotoPlaceholder({
         borderRadius: "var(--radius-md)",
         overflow: "hidden",
         border: "1px solid var(--line)",
-        background: "radial-gradient(120% 120% at 30% 0%, var(--verdigris-700), var(--abyss-900) 70%)",
+        background: src ? "var(--abyss-800)" : "radial-gradient(120% 120% at 30% 0%, var(--verdigris-700), var(--abyss-900) 70%)",
         display: "flex",
         alignItems: "flex-end",
         padding: "14px",
         ...style,
       }}
     >
+      {src && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={label}
+            loading="lazy"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          />
+          <span style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(7,21,26,.10) 30%, rgba(7,21,26,.78))" }} />
+        </>
+      )}
       <span className="sc-label" style={{ position: "relative", color: "var(--fog-400)", fontSize: "11px" }}>
         {label}
         {depth ? ` · ${depth}` : ""}

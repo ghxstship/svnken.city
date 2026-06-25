@@ -4,13 +4,15 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { Eyebrow, OrnamentLabel, PhotoPlaceholder, SectionHead, Rule } from "@/components/ui/Atoms";
+import { SensesSection } from "@/components/site/Senses";
 import { SITE } from "@/lib/site";
-import { RUN_OF_SHOW, RUNTIME_NOTE, ZONES } from "@/lib/descent";
+import { RUN_OF_SHOW, RUNTIME_NOTE, ZONES } from "@/lib/runofshow";
+import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "The Voyage",
   description:
-    "What to expect at SVNKEN CITY — a theatrical five-course descent through the ocean's depth zones, ending in a drowned, luminous city. The story, the descent, the run of show.",
+    "What to expect at SVNKEN CITY — a theatrical five-course voyage through the ocean's depth zones, ending in a drowned, luminous city. The story, the voyage, the run of show.",
 };
 
 export default function ExperiencePage() {
@@ -21,10 +23,10 @@ export default function ExperiencePage() {
         <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto" }}>
           <Eyebrow style={{ marginBottom: "20px" }}>The Voyage</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "20px" }}>
-            You don&rsquo;t watch the room. You descend with it.
+            You don&rsquo;t watch the room. You go under with it.
           </h1>
           <p className="sc-lead" style={{ color: "var(--text)", maxWidth: "640px", margin: "0 auto" }}>
-            SVNKEN CITY is a theatrical expedition dinner — a five-course descent through the ocean&rsquo;s depth zones, staged for ninety
+            SVNKEN CITY is a theatrical expedition dinner — a five-course voyage through the ocean&rsquo;s depth zones, staged for ninety
             minutes, ending in the discovery of a drowned, luminous city. You board as crew.
           </p>
         </div>
@@ -33,7 +35,7 @@ export default function ExperiencePage() {
       {/* THE STORY */}
       <section className="section">
         <div className="container split">
-          <PhotoPlaceholder label="Photo — The drowned grove, low tide" depth="Drowned Grove, FL" h={380} />
+          <PhotoPlaceholder label="The drowned grove, low tide" depth="Drowned Grove, FL" src={IMG.sea[2]} h={380} />
           <div>
             <Eyebrow style={{ marginBottom: "16px" }}>The Legend</Eyebrow>
             <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "18px" }}>The town that never drained.</h2>
@@ -49,10 +51,10 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* THE DESCENT — depth zones */}
+      {/* THE EXPEDITION — depth zones */}
       <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
         <div className="container section">
-          <SectionHead eyebrow="The Descent" title="Five courses, five depths" center style={{ marginBottom: "12px" }} />
+          <SectionHead eyebrow="The Expedition" title="Five courses, five depths" center style={{ marginBottom: "12px" }} />
           <p className="sc-body" style={{ color: "var(--text-muted)", textAlign: "center", maxWidth: "620px", margin: "0 auto 40px" }}>
             The whole night reads as a dive. Each course drops you a zone deeper — the light fading, the sound thickening, the room going dark
             — until the city ignites at the bottom.
@@ -74,27 +76,8 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* THE ROOM — what to expect */}
-      <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
-        <div className="container section">
-          <SectionHead eyebrow="The Room" title="What you walk into" center style={{ marginBottom: "40px" }} />
-          <div className="cards-3">
-            {[
-              ["One long table", "Communal seating by the lantern line. You&rsquo;ll meet whoever the tide brought in beside you."],
-              ["A live crew", "Divers, cooks, and a dockmaster work the room in character. The performance is the service."],
-              ["Sound below water", "An original score and live moments wash through the room — built for the space, not piped in from a stage."],
-              ["Salvage everywhere", "Brass rails, bone china, lantern light, and a wreck bar built from what washed up."],
-              ["Course by course", "A multi-course manifest surfaces as the kitchen pulls it. No menu — only what the divers brought up today."],
-              ["Ninety minutes under", "From the moment the lanterns are lit to the moment you surface. Plan your festival night around it."],
-            ].map(([title, body]) => (
-              <Card key={title as string} interactive>
-                <h3 className="sc-h4" style={{ color: "var(--text-strong)", marginBottom: "10px" }} dangerouslySetInnerHTML={{ __html: title as string }} />
-                <p className="sc-small" style={{ color: "var(--text-muted)", margin: 0 }} dangerouslySetInnerHTML={{ __html: body as string }} />
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* THE FIVE SENSES */}
+      <SensesSection dark />
 
       {/* RUN OF SHOW */}
       <section className="section">
@@ -148,11 +131,11 @@ export default function ExperiencePage() {
                 <Tag tone="brass">21+ for the bar</Tag>
               </div>
               <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
-                A five-course descent needs to know your table in advance. Tell us about allergies and dietary needs when you reserve and again
+                A five-course voyage needs to know your table in advance. Tell us about allergies and dietary needs when you reserve and again
                 at the dock — we log a plant-based and a shellfish-free manifest for every seating.
               </p>
               <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
-                The descent runs in <strong style={{ color: "var(--text)" }}>low light with theatrical haze and loud, immersive sound</strong>. If
+                The voyage runs in <strong style={{ color: "var(--text)" }}>low light with theatrical haze and loud, immersive sound</strong>. If
                 that&rsquo;s a concern, write us and we&rsquo;ll set your seat and the night for you.
               </p>
               <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>

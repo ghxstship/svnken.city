@@ -13,7 +13,7 @@ import { RUN_LABEL, totalSeatings } from "@/lib/shows";
 
 export const metadata: Metadata = {
   title: "Tickets · Dates & Times",
-  description: `SVNKEN CITY at Lot54, The Vanguard — ${RUN_LABEL}. ${totalSeatings()} seatings of the five-course descent. Tickets on Speakeasy.`,
+  description: `SVNKEN CITY at Lot54, The Vanguard — ${RUN_LABEL}. ${totalSeatings()} seatings of the five-course voyage. Tickets on Speakeasy.`,
 };
 
 const TIERS = [SITE.pricing.softOpening, SITE.pricing.standard, SITE.pricing.chefsPass, SITE.pricing.captains];
@@ -28,7 +28,7 @@ export default function TicketsPage() {
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>Dates &amp; Times</h1>
           <OrnamentLabel style={{ marginBottom: "20px" }}>{RUN_LABEL}</OrnamentLabel>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "560px", margin: "0 auto" }}>
-            Every seat is a full five-course descent with dinner included. Pick your night and your tide, then choose your exact seats and
+            Every seat is a full five-course voyage with dinner included. Pick your night and your tide, then choose your exact seats and
             section on a live map — checkout settles on {SITE.ticketing.platform}.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function TicketsPage() {
             })}
           </div>
           <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
-            Every fare is the full five-course descent with dinner included. Wine and rum pairings poured from the wreck cellar; a zero-proof
+            Every fare is the full five-course voyage with dinner included. Wine and rum pairings poured from the wreck cellar; a zero-proof
             tide list logged for every seating. Your fare is the section you pick on the seat map.
           </p>
         </div>
