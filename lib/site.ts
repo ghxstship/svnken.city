@@ -7,18 +7,17 @@ export const SITE = {
   name: "SVNKEN CITY",
   wordmark: "SVNKENCITY",
   tagline: "A Subterranean World Awaits…",
-  parent: "Salvage City Supper Club",
   oneLiner: "There is no menu — only the manifest of what the divers brought up today.",
   description:
-    "A theatrical expedition-dining experience: a five-course voyage below the waterline ending in a drowned, luminous city. The official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard — with festival shuttles, a pregame, and an afterparty.",
+    "A theatrical expedition-dining experience: a five-course voyage below the waterline ending in a drowned, luminous city. Six nights only at Lot54, The Vanguard, in downtown Orlando — dinner, spectacle, and a late afterparty.",
   url: "https://svnken.city",
 
   venue: {
     name: "Lot54 at The Vanguard",
-    context: "The official SVNKEN CITY × EDC Orlando partner venue",
+    context: "Lot54 at The Vanguard, downtown Orlando",
     address: "578 N Orange Ave, Orlando, FL 32801",
     city: "Orlando, FL",
-    note: "A dinner ticket is all you need to dine — no festival wristband required. On show nights we run shuttles to and from EDC Orlando.",
+    note: "Your dinner ticket is all you need — the wreck bar opens before each seating, and on the main run the night carries late.",
   },
 
   contact: {

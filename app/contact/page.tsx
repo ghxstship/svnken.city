@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact the Dock",
-  description: "Reach SVNKEN CITY — reservations, press, access needs, and group tables for the EDC Orlando run.",
+  description: "Reach SVNKEN CITY — reservations, press, access needs, and group tables for the Orlando run.",
 };
 
 export default function ContactPage() {

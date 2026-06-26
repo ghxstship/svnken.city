@@ -7,7 +7,7 @@ export function WeekendProgram() {
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "22px", flexWrap: "wrap" }}>
-        <Tag tone="patina">SVNKEN CITY × EDC Orlando × The Vanguard</Tag>
+        <Tag tone="patina">After Hours at Lot54</Tag>
         <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>{WEEKEND_DATES}</span>
       </div>
       <div className="cards-3">

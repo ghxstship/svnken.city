@@ -23,7 +23,7 @@ export const SENSES: Sense[] = [
     sense: "Sound",
     tag: "What you hear",
     title: "Epic, electric, infernal",
-    body: "An original score built for the room — cinematic swells, heavy-metal weight, and exotic electronic pulse. The bass of the festival run through the bones of a cathedral organ, climbing as the night goes deeper.",
+    body: "An original score built for the room — cinematic swells, heavy-metal weight, and exotic electronic pulse. The bass of an all-night dancefloor run through the bones of a cathedral organ, climbing as the night goes deeper.",
   },
   {
     sense: "Scent",

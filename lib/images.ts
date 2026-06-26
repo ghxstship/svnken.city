@@ -1,7 +1,7 @@
 // ============================================================
 // SVNKEN CITY · IMAGERY
 // Curated stock (Unsplash CDN, hotlinkable) mapped to the five senses
-// and the world: lost ruins, festival light, sea & coast, the table,
+// and the world: lost ruins, stage light, sea & coast, the table,
 // salvage textures, the company. Swap for owned photography post-shoot.
 // ============================================================
 
@@ -10,7 +10,7 @@ const u = (id: string, w = 1400) => `https://images.unsplash.com/photo-${id}?w=$
 export const IMG = {
   // Sight — lost ruins beneath the surface
   ruins: [u("1652971489919-b22d11d257fb"), u("1758970442148-55673b672053"), u("1767724588099-deba67ed8912")],
-  // Sound — epic / electronic / festival light
+  // Sound — epic / electronic / stage light
   sound: [u("1459749411175-04bf5292ceea"), u("1470229722913-7c0e2dbbafd3"), u("1540039155733-5bb30b53aa14")],
   // Scent — salt sea air, coastal breeze
   sea: [u("1569091923578-399adee3f634"), u("1590309285152-3a4919040b78"), u("1608721636036-f412d14e608a")],

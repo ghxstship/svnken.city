@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Partnerships & Sponsorship",
   description:
-    "Partner with SVNKEN CITY at EDC Orlando — presenting, beverage, and activation sponsorships inside a seated, captive, content-built supper-club world.",
+    "Partner with SVNKEN CITY in Orlando — presenting, beverage, and activation sponsorships inside a seated, captive, content-built supper-club world.",
 };
 
 export default function PartnersPage() {
@@ -21,7 +21,7 @@ export default function PartnersPage() {
           <Eyebrow style={{ marginBottom: "16px" }}>Partnerships &amp; Sponsorship</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>Put your brand below the waterline.</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto" }}>
-            For six nights, SVNKEN CITY holds a seated, captive audience inside EDC Orlando — ninety minutes a guest, in a room engineered for
+            For six nights in downtown Orlando, SVNKEN CITY holds a seated, captive audience — ninety minutes a guest, in a room engineered for
             capture. There are a handful of ways to come aboard.
           </p>
         </div>

@@ -44,8 +44,8 @@ export default function ExperiencePage() {
               kitchen out of what they pulled up, lit it with lanterns, and started feeding whoever found the door.
             </p>
             <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>
-              That kitchen is Salvage City Supper Club. SVNKEN CITY is its drowned twin — surfacing for one week at Lot54, The Vanguard, as the
-              official EDC Orlando partner venue, before the water takes the room back.
+              That kitchen became SVNKEN CITY — a supper club that lives below the waterline, surfacing for one week only at Lot54, The
+              Vanguard, in downtown Orlando, before the water takes the room back.
             </p>
           </div>
         </div>

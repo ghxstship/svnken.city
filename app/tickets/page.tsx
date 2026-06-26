@@ -83,14 +83,14 @@ export default function TicketsPage() {
         </div>
       </section>
 
-      {/* EDC WEEKEND PROGRAM */}
+      {/* AFTER HOURS */}
       <section style={{ background: "var(--abyss-900)", borderTop: "1px solid var(--line)" }}>
         <div className="container section">
-          <Eyebrow style={{ marginBottom: "12px" }}>The EDC Weekend</Eyebrow>
-          <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>More than dinner on festival nights</h2>
+          <Eyebrow style={{ marginBottom: "12px" }}>After Hours</Eyebrow>
+          <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>More than dinner on the main run</h2>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "640px", marginBottom: "30px" }}>
-            Nov 5&ndash;8, your seating sits inside the SVNKEN CITY × EDC Orlando × The Vanguard program — a pregame and shuttles to the
-            festival, then exit shuttles back to a late afterparty at Lot54.
+            Nov 5&ndash;8, the night runs longer at Lot54 — the wreck bar opens before the first seating, and a late afterparty carries on
+            once the last plate clears. Dinner guests get the door.
           </p>
           <WeekendProgram />
         </div>
@@ -137,10 +137,10 @@ export default function TicketsPage() {
         <div className="container">
           <Card variant="patina" style={{ padding: "clamp(28px, 4vw, 44px)", textAlign: "center" }}>
             <Eyebrow style={{ marginBottom: "12px" }}>Before you book</Eyebrow>
-            <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Dinner is a separate ticket from the festival.</h2>
+            <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>One ticket, the whole night.</h2>
             <p className="sc-body" style={{ color: "var(--text)", maxWidth: "600px", margin: "0 auto 24px" }}>
-              SVNKEN CITY is staged at Lot54, The Vanguard — the official EDC Orlando partner venue. Your seating ticket is all you need to
-              dine; no festival wristband required. On festival nights, shuttles run between Lot54 and EDC Orlando.
+              SVNKEN CITY is staged at Lot54, The Vanguard, in downtown Orlando. Your seating ticket covers the full five-course voyage — and
+              on the main run, the wreck bar before and the afterparty after.
             </p>
             <ButtonLink href="/venue" variant="secondary">
               Getting there →

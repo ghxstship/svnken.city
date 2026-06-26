@@ -1,8 +1,8 @@
 // ============================================================
 // SVNKEN CITY · SHOW SCHEDULE
-// On-sale run overlapping EDC Orlando, Nov 2026, at Lot54, The Vanguard.
-// Soft Opening 11/4 (2 shows) → festival run 11/5–11/8 (3 shows/night,
-// wrapped in the EDC weekend program) → closing 11/9 (2 shows).
+// Six-night run, Nov 2026, at Lot54, The Vanguard, downtown Orlando.
+// Soft Opening 11/4 (2 shows) → main run 11/5–11/8 (3 shows/night,
+// with the after-hours program) → closing 11/9 (2 shows).
 // ============================================================
 
 export type SeatingStatus = "open" | "limited" | "sold-out";
@@ -25,7 +25,7 @@ export interface ShowDay {
   kind: "soft-opening" | "main" | "closing";
   label: string;
   blurb: string;
-  /** festival nights also run the pregame / shuttle / afterparty program */
+  /** main-run nights also run the after-hours program (bar + afterparty) */
   festivalProgram: boolean;
   seatings: Seating[];
 }
@@ -51,8 +51,8 @@ export const SHOWS: ShowDay[] = [
     weekday: "Thursday",
     display: "Thu · Nov 5",
     kind: "main",
-    label: "Festival Run",
-    blurb: "Three voyages nightly, inside the EDC weekend program — pregame, shuttles, and afterparty.",
+    label: "The Run",
+    blurb: "Three voyages nightly, with the wreck bar before and a late afterparty after.",
     festivalProgram: true,
     seatings: [
       { time24: "17:00", time: "5:00 PM", status: "open", buyUrl: buy("nov-5-500pm") },
@@ -65,7 +65,7 @@ export const SHOWS: ShowDay[] = [
     weekday: "Friday",
     display: "Fri · Nov 6",
     kind: "main",
-    label: "Festival Run",
+    label: "The Run",
     blurb: "Three voyages nightly. Friday tides run loud — book early.",
     festivalProgram: true,
     seatings: [
@@ -79,7 +79,7 @@ export const SHOWS: ShowDay[] = [
     weekday: "Saturday",
     display: "Sat · Nov 7",
     kind: "main",
-    label: "Festival Run",
+    label: "The Run",
     blurb: "Three voyages nightly. The biggest night of the run.",
     festivalProgram: true,
     seatings: [
@@ -93,8 +93,8 @@ export const SHOWS: ShowDay[] = [
     weekday: "Sunday",
     display: "Sun · Nov 8",
     kind: "main",
-    label: "Festival Run",
-    blurb: "Three voyages nightly, with the full EDC weekend program.",
+    label: "The Run",
+    blurb: "Three voyages nightly, with the full after-hours program.",
     festivalProgram: true,
     seatings: [
       { time24: "17:00", time: "5:00 PM", status: "open", buyUrl: buy("nov-8-500pm") },
@@ -156,8 +156,8 @@ export function findSeating(date: string, time24: string): { day: ShowDay; seati
 }
 
 // ----------------------------------------------------------
-// EDC WEEKEND PROGRAM (festival nights, Nov 5–8)
-// The three touchpoints that wrap the dinner on festival nights.
+// AFTER HOURS (main-run nights, Nov 5–8)
+// The house's own programming that wraps the dinner — bar, voyage, afterparty.
 // ----------------------------------------------------------
 export interface ProgramBeat {
   time: string;
@@ -167,22 +167,20 @@ export interface ProgramBeat {
 
 export const WEEKEND_PROGRAM: ProgramBeat[] = [
   {
-    time: "3:00 – 5:00 PM",
-    title: "Pregame & Festival Shuttles",
-    detail:
-      "The SVNKEN CITY × EDC Orlando × The Vanguard pregame opens at Lot54 — drinks, sound, and shuttles running to the festival gates.",
+    time: "From 4:00 PM",
+    title: "The Wreck Bar Opens",
+    detail: "Doors and the wreck bar open before the first seating — drinks, sound, and a slow sink into the deep.",
   },
   {
     time: "5:00 · 6:30 · 8:00 PM",
-    title: "The Expedition — Dinner Seatings",
+    title: "The Voyage — Dinner Seatings",
     detail: "Three seatings of the five-course voyage below the waterline. Pick your tide on the schedule below.",
   },
   {
     time: "After the last seating",
-    title: "Exit Shuttles & Afterparty",
-    detail:
-      "Shuttles run back from EDC Orlando to Lot54, where the afterparty carries the night past the surface. Dinner guests get the door.",
+    title: "The Afterparty",
+    detail: "When the last plate clears, the room turns — a late afterparty below the waterline. Dinner guests get the door.",
   },
 ];
 
-export const WEEKEND_DATES = "Festival nights · Nov 5 – 8";
+export const WEEKEND_DATES = "Main nights · Nov 5 – 8";

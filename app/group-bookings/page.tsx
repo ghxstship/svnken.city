@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Group Tables & Buyouts",
-  description: "Bring a crew to SVNKEN CITY — group tables, private seatings, and full buyouts at Lot54, The Vanguard, during the EDC Orlando weekend.",
+  description: "Bring a crew to SVNKEN CITY — group tables, private seatings, and full buyouts at Lot54, The Vanguard, during the Orlando run.",
 };
 
 export default function GroupBookingsPage() {
@@ -52,7 +52,7 @@ export default function GroupBookingsPage() {
             <h2 className="sc-h1" style={{ color: "var(--text-strong)", marginBottom: "18px" }}>Tell us about the table.</h2>
             <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
               Leave the size, the night, and the occasion. The dockmaster will write back with availability and a hold — group seats move
-              fast during the festival, so reach out early.
+              fast during the run, so reach out early.
             </p>
             <p className="sc-body" style={{ color: "var(--text-muted)", margin: 0 }}>
               Prefer email? Write <a href={`mailto:${SITE.contact.groups}`}>{SITE.contact.groups}</a>.

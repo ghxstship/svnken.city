@@ -58,7 +58,7 @@ export default function CrewPage() {
           <Card framed style={{ padding: "clamp(28px, 4vw, 44px)", textAlign: "center" }}>
             <h2 className="sc-h2" style={{ color: "var(--text-strong)", marginBottom: "12px" }}>Want to crew the run?</h2>
             <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto 24px" }}>
-              We hire across twelve departments for the EDC Orlando run — kitchen, performance, production, and more.
+              We hire across twelve departments for the run — kitchen, performance, production, and more.
             </p>
             <div className="row-center">
               <ButtonLink href="/careers" variant="secondary">See Open Roles</ButtonLink>

@@ -21,7 +21,7 @@ export default function HomePage() {
       <section className="sc-deep sc-grain" style={{ position: "relative", overflow: "hidden", padding: "120px 24px 100px", textAlign: "center" }}>
         <div style={{ position: "relative", maxWidth: "860px", margin: "0 auto" }}>
           <Eyebrow style={{ letterSpacing: "var(--tracking-mega)", marginBottom: "26px" }}>
-            Below the Waterline · A Salvage City Voyage
+            Below the Waterline · An Independent Voyage
           </Eyebrow>
           <h1 style={{ margin: "0 auto", width: "min(100%, 720px)", filter: "drop-shadow(0 4px 44px rgba(0,0,0,.7))" }}>
             <Wordmark fill="var(--bone-100)" />
@@ -35,7 +35,7 @@ export default function HomePage() {
           </p>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto 20px" }}>
             Claude Debussy&rsquo;s <em style={{ color: "var(--text)" }}>The Sunken Cathedral</em>, reimagined as an immersive electro rock opera —
-            fine dining at a Michelin pitch, Cirque-grade spectacle, and the pulse of EDC, five fathoms down.
+            fine dining at a Michelin pitch, Cirque-grade spectacle, and the pulse of an all-night dancefloor, five fathoms down.
           </p>
           <div className="sc-tag-text" style={{ color: "var(--brass-400)", marginBottom: "34px" }}>{RUN_LABEL}</div>
           <div className="row-center">
@@ -95,7 +95,7 @@ export default function HomePage() {
               lantern light, and whatever the reef gives back.
             </p>
             <p className="sc-body" style={{ color: "var(--text-muted)", marginBottom: "26px" }}>
-              For one week, SVNKEN CITY surfaces at Lot54, The Vanguard — the official EDC Orlando home. One long table, a live crew, and a
+              For one week, SVNKEN CITY surfaces at Lot54, The Vanguard, in downtown Orlando. One long table, a live crew, and a
               five-course voyage pulled from the water. You sit where the lanterns reach.
             </p>
             <ButtonLink href="/experience" variant="secondary">
@@ -114,7 +114,7 @@ export default function HomePage() {
             {[
               ["01", "Step aboard", "Come a quarter-hour early and give us your name — we&rsquo;ll find you on the manifest. Mind the rail: once the doors close, the room seals and we cast off for the deep."],
               ["02", "Down you go", "Five courses, each a fathom deeper than the last, while the crew works the room and the city stirs below. Ninety minutes, surface to seabed — the legend goes you won&rsquo;t clock the time."],
-              ["03", "Back to dry deck", "The drowned city wakes, the lanterns lift, and we set you topside a little salt-cured. On festival nights, the afterparty carries you the rest of the way."],
+              ["03", "Back to dry deck", "The drowned city wakes, the lanterns lift, and we set you topside a little salt-cured. On the main run, the afterparty carries you the rest of the way."],
             ].map(([num, title, body]) => (
               <Card key={num as string} interactive>
                 <div className="sc-h2" style={{ color: "var(--brass-500)", marginBottom: "12px" }}>{num}</div>

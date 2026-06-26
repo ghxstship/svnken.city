@@ -53,4 +53,4 @@ export const CREW: CrewMember[] = [
 ];
 
 export const CREW_NOTE =
-  "An XPMS production of Salvage City Supper Club. Crew the run yourself — see open roles on the careers page.";
+  "An independent XPMS production. Crew the run yourself — see open roles on the careers page.";

@@ -1,8 +1,6 @@
 // ============================================================
 // SVNKEN CITY · CREW MANIFEST (careers)
-// Roles organized by XPMS department, drawn from the Salvage City
-// Supper Club staffing records (GHXSTSHIP productions, EDSEA25 /
-// EDCLV26.SC rosters). Hiring for the EDC Orlando run.
+// Roles organized by XPMS department. Hiring for the SVNKEN CITY run.
 // ============================================================
 
 export type Commitment = "Run crew" | "Department lead" | "Seasonal" | "Contract";

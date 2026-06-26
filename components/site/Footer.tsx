@@ -28,7 +28,7 @@ export function Footer() {
               SVNKENCITY
             </div>
             <p className="sc-small" style={{ color: "var(--text-muted)", maxWidth: "300px", margin: "0 0 14px" }}>
-              A five-course voyage below the waterline — the official SVNKEN CITY × EDC Orlando home at Lot54, The Vanguard.
+              A five-course voyage below the waterline — six nights only at Lot54, The Vanguard, in downtown Orlando.
             </p>
             <div className="sc-tag-text" style={{ color: "var(--text-faint)" }}>{RUN_LABEL}</div>
           </div>
@@ -75,7 +75,7 @@ export function Footer() {
         <hr className="sc-rule" style={{ margin: "36px 0 18px" }} />
         <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
           <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>
-            © 2026 SVNKEN CITY · A {SITE.parent} voyage
+            © 2026 SVNKEN CITY · An independent production
           </span>
           <span className="sc-tag-text" style={{ color: "var(--text-faint)" }}>
             Tickets on {SITE.ticketing.platform}, never Ticket Fairy.

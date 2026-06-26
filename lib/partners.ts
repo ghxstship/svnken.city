@@ -38,7 +38,7 @@ export const PARTNER_TIERS: PartnerTier[] = [
   {
     name: "Manifest Partner",
     code: "Activation",
-    blurb: "A single-night or category activation inside the EDC weekend program.",
+    blurb: "A single-night or category activation across the run.",
     perks: [
       "Branded activation or sampling on select nights",
       "Inclusion in pre-show and social rollout",
@@ -50,14 +50,14 @@ export const PARTNER_TIERS: PartnerTier[] = [
 
 export const PARTNER_REASONS: [string, string][] = [
   ["A captive, seated audience", "Every guest is sat for ~90 minutes in a candlelit room — not passing by a banner, but living inside the brand moment."],
-  ["EDC Orlando reach", "We surface inside one of the country’s largest festivals, in front of a high-intent, experience-hungry crowd."],
+  ["A high-intent night crowd", "Downtown Orlando on a peak November weekend — a captive, experience-hungry audience seated for ninety minutes."],
   ["Built for content", "A cinematic, photogenic world engineered for capture — your brand travels home in every guest’s feed."],
-  ["A proven supper-club engine", "Salvage City has run the room from Las Vegas to Miami to the high seas. The machine is tested; Orlando is the next port."],
+  ["A tested production engine", "The team has run immersive supper-club rooms across the country. The machine is proven; Orlando is the next port."],
 ];
 
 export const PARTNER_STATS: [string, string][] = [
   ["6", "nights, Nov 4–9"],
   ["20", "seatings across the run"],
   ["~90", "minutes seated, per guest"],
-  ["1", "of EDC Orlando’s most intimate rooms"],
+  ["1", "of Orlando’s most intimate rooms"],
 ];

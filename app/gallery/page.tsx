@@ -8,7 +8,7 @@ import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Media Gallery",
-  description: "Stills and film from below the waterline — lost ruins, the festival pulse, the table, and the company of SVNKEN CITY at EDC Orlando.",
+  description: "Stills and film from below the waterline — lost ruins, the sound, the table, and the company of SVNKEN CITY below the waterline.",
 };
 
 type Media = { label: string; provenance: string; kind: "photo" | "film"; span?: number; tall?: boolean; src: string };
@@ -22,7 +22,7 @@ const GALLERY: Media[] = [
   { label: "The wreck bar, candlelit", provenance: "The Room", kind: "photo", src: IMG.room[0] },
   { label: "A drowned colonnade", provenance: "0:42", kind: "film", span: 2, src: IMG.ruins[1] },
   { label: "Wood, rope, and brine", provenance: "The Textures", kind: "photo", src: IMG.textures[0] },
-  { label: "The festival pulse", provenance: "Nov 7", kind: "photo", tall: true, src: IMG.sound[1] },
+  { label: "The sound, full tilt", provenance: "Nov 7", kind: "photo", tall: true, src: IMG.sound[1] },
   { label: "Global fusion, course two", provenance: "The Tastes", kind: "photo", src: IMG.food[1] },
   { label: "The long table, lit low", provenance: "The Room", kind: "photo", src: IMG.room[2] },
   { label: "Surfacing — closing film", provenance: "1:12", kind: "film", src: IMG.sea[1] },
@@ -100,7 +100,7 @@ export default function GalleryPage() {
           <Eyebrow style={{ marginBottom: "16px" }}>Media Gallery</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>From below the waterline</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto" }}>
-            Lost ruins, the festival pulse, the table, and the company — caught below the waterline. Fresh capture drops through the run, Nov 4&ndash;9.
+            Lost ruins, the sound, the table, and the company — caught below the waterline. Fresh capture drops through the run, Nov 4&ndash;9.
           </p>
         </div>
       </section>

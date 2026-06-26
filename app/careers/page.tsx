@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Join the Crew · Careers",
-  description: `Crew the EDC Orlando run of SVNKEN CITY. ${totalRoles()} roles across twelve XPMS departments — culinary, entertainment, production, technical, operations and more.`,
+  description: `Crew the SVNKEN CITY run. ${totalRoles()} roles across twelve XPMS departments — culinary, entertainment, production, technical, operations and more.`,
 };
 
 export default function CareersPage() {
@@ -21,8 +21,8 @@ export default function CareersPage() {
           <Eyebrow style={{ marginBottom: "16px" }}>Join the Crew</Eyebrow>
           <h1 className="sc-display" style={{ color: "var(--text-strong)", marginBottom: "16px" }}>Crew the voyage.</h1>
           <p className="sc-body" style={{ color: "var(--text-muted)", maxWidth: "580px", margin: "0 auto 22px" }}>
-            We&rsquo;re hiring across every department to surface SVNKEN CITY at Lot54, The Vanguard, Nov 4&ndash;9. Salvage City has run
-            the room from Las Vegas to Miami to the high seas — Orlando is the next port.
+            We&rsquo;re hiring across every department to surface SVNKEN CITY at Lot54, The Vanguard, Nov 4&ndash;9 — an independent
+            production crewed by people who have run immersive supper-club rooms across the country.
           </p>
           <div className="row-center" style={{ gap: "10px" }}>
             <Badge tone="brass">{DEPARTMENTS.length} XPMS Departments</Badge>
@@ -81,7 +81,7 @@ export default function CareersPage() {
             ))}
           </div>
           <p className="sc-small sc-italic" style={{ color: "var(--text-faint)", marginTop: "18px" }}>
-            Departments and titles follow the Salvage City Supper Club staffing model. Not every role opens for every run — apply to the
+            Departments and titles follow our XPMS staffing model. Not every role opens for every run — apply to the
             department that fits and we&rsquo;ll place you.
           </p>
         </div>

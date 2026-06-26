@@ -26,8 +26,6 @@ export const metadata: Metadata = {
   keywords: [
     "SVNKEN CITY",
     "Sunken City",
-    "Salvage City Supper Club",
-    "EDC Orlando",
     "Lot54",
     "The Vanguard",
     "immersive dinner",

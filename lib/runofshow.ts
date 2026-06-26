@@ -1,6 +1,6 @@
 // ============================================================
 // SVNKEN CITY · THE EXPEDITION — run of show
-// The canonical 90-minute clock (festival cut): eight timed blocks,
+// The canonical 90-minute clock (90-minute cut): eight timed blocks,
 // each in a deeper ocean zone, cascading from one seated start.
 // T+ is minutes from your seating time.
 // ============================================================
